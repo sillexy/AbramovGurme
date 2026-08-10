@@ -7,11 +7,17 @@ export type Direction = {
   summary: string;
 };
 
-export const navigation = [
+export type NavigationItem = {
+  href: string | null;
+  label: string;
+};
+
+export const navigation: readonly NavigationItem[] = [
   { href: "#about", label: "О продукте" },
   { href: "#offers", label: "Направления" },
   { href: "#technology", label: "Технология" },
   { href: "#business", label: "Для бизнеса" },
+  { href: null, label: "Дилеры" },
 ] as const;
 
 export const contact = {
