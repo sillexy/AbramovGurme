@@ -17,5 +17,12 @@ export const metadata: Metadata = {
 };
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
-  return <html lang="ru" className={`${display.variable} ${body.variable}`}><body>{children}</body></html>;
+  return (
+    <html lang="ru" className={`${display.variable} ${body.variable}`}>
+      <head>
+        <link rel="stylesheet" href="./brand-matrix-assets.css" />
+      </head>
+      <body>{children}</body>
+    </html>
+  );
 }
