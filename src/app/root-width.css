@@ -173,6 +173,12 @@ body > #top,
   margin-top: auto;
 }
 
+@media (min-width: 1024px) {
+  .benefits .benefit-card {
+    min-height: clamp(340px, 27vw, 378px);
+  }
+}
+
 /* Prevent the mobile brand-matrix grid from widening the page because of intrinsic text width. */
 @media (max-width: 767px) {
   .about .section-copy {
