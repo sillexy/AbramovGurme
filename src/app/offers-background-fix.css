@@ -53,4 +53,15 @@
   .business .business-card {
     min-height: 0;
   }
+
+  /* Only raise the one-line second title and its divider.
+     Their layout space stays untouched, so the description and metric do not move. */
+  .business .business-card:nth-child(2) {
+    --second-title-shift: clamp(29px, 2.35vw, 38px);
+  }
+
+  .business .business-card:nth-child(2) > h3,
+  .business .business-card:nth-child(2) > .business-card__divider {
+    transform: translateY(calc(0px - var(--second-title-shift)));
+  }
 }
