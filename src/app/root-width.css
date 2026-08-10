@@ -23,9 +23,17 @@ body > #top,
   display: none;
 }
 
-/* Match the benefits-card spacing to the tighter text rhythm above it. */
+/* Use one shared vertical spacing value for the benefits block. */
+.benefits {
+  --benefit-vertical-space: clamp(28px, 3vw, 36px);
+}
+
 .benefit-grid {
-  margin-top: clamp(28px, 3vw, 36px);
+  margin-top: var(--benefit-vertical-space);
+}
+
+.benefit-card {
+  padding-block: var(--benefit-vertical-space);
 }
 
 /* Prevent the mobile brand-matrix grid from widening the page because of intrinsic text width. */
