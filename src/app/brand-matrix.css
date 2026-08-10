@@ -25,7 +25,7 @@
   min-height: 230px;
   border-radius: 17px 0 0 17px;
   background-color: #fff;
-  background-image: url('/images/brand-matrix/flagship.webp');
+  background-image: url('/images/brand-matrix/flagship.png');
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -128,10 +128,10 @@
   content: "";
 }
 
-.ecosystem-grid article:nth-child(1)::before { background-image: url('/images/brand-matrix/a1-lunch.webp'); }
-.ecosystem-grid article:nth-child(2)::before { background-image: url('/images/brand-matrix/a2-fitness.webp'); }
-.ecosystem-grid article:nth-child(3)::before { background-image: url('/images/brand-matrix/a3-bars.webp'); }
-.ecosystem-grid article:nth-child(4)::before { background-image: url('/images/brand-matrix/a4-desserts.webp'); }
+.ecosystem-grid article:nth-child(1)::before { background-image: url('/images/brand-matrix/a1-lunch.png'); }
+.ecosystem-grid article:nth-child(2)::before { background-image: url('/images/brand-matrix/a2-fitness.png'); }
+.ecosystem-grid article:nth-child(3)::before { background-image: url('/images/brand-matrix/a3-bars.png'); }
+.ecosystem-grid article:nth-child(4)::before { background-image: url('/images/brand-matrix/a4-desserts.png'); }
 
 .ecosystem-grid article::after {
   position: absolute;
