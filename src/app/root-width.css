@@ -23,6 +23,11 @@ body > #top,
   display: none;
 }
 
+/* Match detailed offer blocks to the warm ivory background used by the ecosystem section. */
+.offers {
+  background: var(--color-ivory);
+}
+
 /* Philosophy cards: match the illustrated reference while keeping the current first two texts. */
 .about .split-grid {
   align-items: center;
