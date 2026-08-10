@@ -28,10 +28,13 @@
       linear-gradient(var(--color-copper), var(--color-copper)) center top / 1px 27px no-repeat;
   }
 
+  /* The grid has three 20px gaps, so the outer card centres sit 7.5px
+     farther out than a simple 12.5% inset. Extend the horizontal branch
+     to the exact centres of A1 and A4 so it meets the edge circles. */
   .ecosystem-grid::before {
     top: -27px;
-    right: 12.5%;
-    left: 12.5%;
+    right: calc(12.5% - 7.5px);
+    left: calc(12.5% - 7.5px);
     height: 1px;
     background: var(--color-copper);
   }
