@@ -1,0 +1,20 @@
+html,
+body {
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
+}
+
+body > #top,
+#top,
+#top > main {
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
+}
+
+#top > main > section,
+#top > .site-footer {
+  width: 100%;
+  max-width: none;
+}
