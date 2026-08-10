@@ -25,3 +25,11 @@
   content: "";
   transform: translateX(-50%);
 }
+
+/* Business-card metrics should visually match the description copy above them. */
+.business .business-card > .business-card__metric {
+  font-family: var(--font-body), Arial, sans-serif;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.52;
+}
