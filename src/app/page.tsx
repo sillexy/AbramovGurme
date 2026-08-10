@@ -71,7 +71,7 @@ export default function Home() {
               <article className="outlined-copy"><h3>Абсолютная открытость</h3><p>В отличие от закрытых пластиковых контейнеров, продукт показывает себя сам. Мы не прячем еду за маркетинговой упаковкой.</p></article>
               <p className="serif-note">Премиальная экоупаковка</p>
             </div>
-            <SourceImage src="/source/page-02.jpg" alt="Готовое блюдо в прозрачной стеклянной банке" className="editorial-image source-image--right" />
+            <SourceImage src="/source/page-02-user.png" alt="Готовое блюдо в прозрачной стеклянной банке" className="editorial-image source-image--right" />
           </Reveal>
         </section>
 

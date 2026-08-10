@@ -106,3 +106,12 @@ test("renders B2B partnership cards with their visual hierarchy", () => {
   assert.match(css, /\.business-card\s*\{[^}]*display:flex;[^}]*flex-direction:column/);
   assert.match(css, /\.business-card__cta\s*\{[^}]*margin-top:auto/);
 });
+
+test("keeps touch devices in a single-column layout even when their browser uses a wide viewport", () => {
+  const css = readFileSync("src/app/globals.css", "utf8");
+  const touchLayout = css.match(/@media \(hover:none\) and \(pointer:coarse\)\s*\{([\s\S]*?)\n\}/)?.[1] ?? "";
+
+  assert.match(touchLayout, /\.hero__grid\s*\{[^}]*grid-template-columns:1fr/);
+  assert.match(touchLayout, /\.business-grid\s*\{[^}]*grid-template-columns:1fr/);
+  assert.match(touchLayout, /\.business-card:last-child\s*\{[^}]*width:100%/);
+});

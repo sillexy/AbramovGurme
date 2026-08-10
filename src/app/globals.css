@@ -390,3 +390,35 @@ section { scroll-margin-top:88px; }
   .business-card__metric { font-size:clamp(1.1rem,6.2cqw,1.85rem); }
   .business-card__cta { font-size:clamp(.82rem,4.4cqw,1rem); }
 }
+
+/* Keep touch devices in the mobile flow even when a browser reports a tablet-sized viewport. */
+@media (hover:none) and (pointer:coarse) {
+  .hero__grid {
+    grid-template-columns:1fr;
+  }
+
+  .split-grid,
+  .section-heading,
+  .offer,
+  .offer--reverse,
+  .offer--dessert {
+    grid-template-columns:1fr;
+  }
+
+  .business-grid {
+    grid-template-columns:1fr;
+  }
+
+  .hero__visual {
+    min-height:440px;
+    margin-top:10px;
+  }
+
+  .business-card,
+  .business-grid article,
+  .business-card:last-child {
+    grid-column:auto;
+    justify-self:stretch;
+    width:100%;
+  }
+}
