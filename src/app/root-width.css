@@ -23,6 +23,11 @@ body > #top,
   display: none;
 }
 
+/* Match the benefits-card spacing to the tighter text rhythm above it. */
+.benefit-grid {
+  margin-top: clamp(28px, 3vw, 36px);
+}
+
 /* Prevent the mobile brand-matrix grid from widening the page because of intrinsic text width. */
 @media (max-width: 767px) {
   .ecosystem-grid {
