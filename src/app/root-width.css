@@ -19,6 +19,10 @@ body > #top,
   max-width: none;
 }
 
+.business-card__cta {
+  display: none;
+}
+
 /* Prevent the mobile brand-matrix grid from widening the page because of intrinsic text width. */
 @media (max-width: 767px) {
   .ecosystem-grid {
