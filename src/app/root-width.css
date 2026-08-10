@@ -28,6 +28,12 @@ body > #top,
   align-items: center;
 }
 
+.about .section-copy {
+  width: 100%;
+  max-width: 600px;
+  justify-self: start;
+}
+
 .about .section-copy h2 {
   margin-bottom: clamp(28px, 3.4vw, 44px);
 }
@@ -99,11 +105,11 @@ body > #top,
   padding-left: 24px;
   border-left: 1px solid rgba(185, 120, 69, 0.34);
   background-image: none;
-  font-family: var(--font-display), Georgia, serif;
-  font-size: clamp(1.25rem, 1.7vw, 1.55rem);
+  font-family: var(--font-body), sans-serif;
+  font-size: 1rem;
   font-style: normal;
-  font-weight: 500;
-  line-height: 1.08;
+  font-weight: 700;
+  line-height: 1.25;
 }
 
 .about .serif-note::after {
@@ -121,6 +127,8 @@ body > #top,
 
 /* Fit and vertically center the philosophy image against the left content column. */
 .about .editorial-image {
+  width: 100%;
+  min-height: clamp(540px, 44vw, 690px);
   align-self: center;
   background: transparent;
 }
@@ -132,14 +140,14 @@ body > #top,
 
 @media (min-width: 1024px) {
   .about .split-grid {
-    grid-template-columns: minmax(0, 1.22fr) minmax(0, 0.78fr);
-    gap: clamp(48px, 5vw, 72px);
+    grid-template-columns: minmax(0, 600px) minmax(0, 1fr);
+    gap: clamp(56px, 6vw, 88px);
   }
 
   .about .section-copy h2 {
     max-width: none;
     white-space: nowrap;
-    font-size: clamp(2.35rem, 3.25vw, 3.35rem);
+    font-size: clamp(2rem, 2.55vw, 2.7rem);
   }
 }
 
@@ -167,6 +175,14 @@ body > #top,
 
 /* Prevent the mobile brand-matrix grid from widening the page because of intrinsic text width. */
 @media (max-width: 767px) {
+  .about .section-copy {
+    max-width: none;
+  }
+
+  .about .editorial-image {
+    min-height: 420px;
+  }
+
   .about .outlined-copy,
   .about .serif-note {
     grid-template-columns: 60px minmax(0, 1fr);
@@ -182,7 +198,8 @@ body > #top,
     background-size: 36px 36px;
   }
 
-  .about .outlined-copy h3 {
+  .about .outlined-copy h3,
+  .about .serif-note {
     font-size: 0.98rem;
   }
 
@@ -190,10 +207,6 @@ body > #top,
   .about .serif-note::after {
     font-size: 0.9rem;
     line-height: 1.46;
-  }
-
-  .about .serif-note {
-    font-size: 1.28rem;
   }
 
   .ecosystem-grid {
