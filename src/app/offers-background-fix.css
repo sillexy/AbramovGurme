@@ -57,7 +57,10 @@
   align-items: flex-end;
   justify-content: center;
   color: var(--color-ink);
-  content: "Нулевые списания";
+  content: "Нулевые\A списания";
+  line-height: 1.02;
+  text-align: center;
+  white-space: pre-line;
 }
 
 /* Let the third card determine the natural row height; the grid stretches all three equally. */
