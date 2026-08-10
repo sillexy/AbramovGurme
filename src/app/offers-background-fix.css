@@ -23,26 +23,3 @@
   width: 100vw;
   background: var(--color-ivory);
   content: "";
-  transform: translateX(-50%);
-}
-
-/* Business-card metrics should visually match the description copy above them. */
-.business .business-card > .business-card__metric {
-  margin-top: 23px;
-  margin-bottom: 0;
-  font-family: var(--font-body), Arial, sans-serif;
-  font-size: 1rem;
-  font-weight: 400;
-  line-height: 1.52;
-}
-
-/* Let the third card determine the natural row height; the grid stretches all three equally. */
-@media (min-width: 1024px) {
-  .business .business-grid {
-    align-items: stretch;
-  }
-
-  .business .business-card {
-    min-height: 0;
-  }
-}
