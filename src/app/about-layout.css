@@ -1,3 +1,12 @@
+/* Keep the vertical rhythm around the philosophy heading symmetrical. */
+.about .section-copy h2 {
+  margin-bottom: 20px;
+}
+
+.about .section-copy h2 + .outlined-copy {
+  margin-top: 0;
+}
+
 /* Desktop philosophy layout: let the heading define the left-column width. */
 @media (min-width: 1024px) {
   .about .split-grid {
