@@ -67,8 +67,8 @@ export default function Home() {
           <Reveal className="shell split-grid">
             <div className="section-copy">
               <p className="eyebrow">Философия бренда</p><h2 id="about-title">Честность, которую видно сразу</h2>
-              <article className="outlined-copy"><h3>Приготовлено прямо в банке</h3><p>Мы берем лучшие продукты и готовим их непосредственно в банке. Стекло позволяет оценить структуру и эстетику блюда еще до открытия.</p></article>
-              <article className="outlined-copy"><h3>Абсолютная открытость</h3><p>В отличие от закрытых пластиковых контейнеров, продукт показывает себя сам. Мы не прячем еду за маркетинговой упаковкой.</p></article>
+              <article className="outlined-copy"><h3>Приготовлено прямо в банке</h3><p>Мы взяли лучшие продукты и приготовили их прямо в банке - это вкусно и полезно!</p></article>
+              <article className="outlined-copy"><h3>Абсолютная открытость</h3><p>Стекло позволяет оценить структуру, свежесть и эстетику блюда еще до того как вы открыли блюдо. Гарантия доверия.</p></article>
               <p className="serif-note">Премиальная экоупаковка</p>
             </div>
             <SourceImage src="/source/page-02-user.png" alt="Готовое блюдо в прозрачной стеклянной банке" className="editorial-image source-image--right" />
