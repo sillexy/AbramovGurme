@@ -23,6 +23,16 @@ body > #top,
   display: none;
 }
 
+/* Fit the philosophy image without cropping and let the section background show through. */
+.about .editorial-image {
+  background: transparent;
+}
+
+.about .editorial-image img {
+  object-fit: contain;
+  object-position: center;
+}
+
 /* One shared vertical spacing value for the benefits block. */
 .benefits {
   --benefit-vertical-space: clamp(28px, 3vw, 36px);
