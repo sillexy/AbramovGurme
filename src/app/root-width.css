@@ -19,19 +19,13 @@ body > #top,
   max-width: none;
 }
 
-/* On touch browsers, anchor the page to the visual viewport width just like the fixed header. */
-@media (hover: none) and (pointer: coarse) {
-  html,
-  body,
-  body > #top,
-  #top,
-  #top > main,
-  #top > main > section,
-  #top > .site-footer {
-    width: 100vw;
-    width: 100dvw;
-    max-width: 100vw;
-    max-width: 100dvw;
+/* Prevent the mobile brand-matrix grid from widening the page because of intrinsic text width. */
+@media (max-width: 767px) {
+  .ecosystem-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .ecosystem-grid > article {
     min-width: 0;
   }
 }
