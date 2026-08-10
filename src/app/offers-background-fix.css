@@ -33,3 +33,10 @@
   font-weight: 400;
   line-height: 1.52;
 }
+
+/* Reduce the oversized desktop cards now that their CTA row is hidden. */
+@media (min-width: 1024px) {
+  .business .business-card {
+    min-height: 420px;
+  }
+}
