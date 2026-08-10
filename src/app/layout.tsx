@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Cormorant_Garamond, Manrope } from "next/font/google";
 
 import "./globals.css";
+import "./root-width.css";
 
 const display = Cormorant_Garamond({ subsets: ["cyrillic", "latin"], weight: ["500", "600"], variable: "--font-display" });
 const body = Manrope({ subsets: ["cyrillic", "latin"], weight: ["400", "500", "600", "700"], variable: "--font-body" });
