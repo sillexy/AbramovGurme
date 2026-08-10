@@ -59,7 +59,9 @@ export function SiteHeader() {
           <img className="brand__art" src="./brand/logo.svg" alt="" />
         </a>
         <nav className="desktop-nav" aria-label="Основная навигация">
-          {navigation.map((item) => <a key={item.href} href={item.href}>{item.label}</a>)}
+          {navigation.map((item) => item.href
+            ? <a key={item.href} href={item.href}>{item.label}</a>
+            : <span className="nav-placeholder" key={item.label}>{item.label}</span>)}
         </nav>
         <div className="site-header__actions">
           <ContactDialog className="button button--header" />
@@ -81,7 +83,9 @@ export function SiteHeader() {
           <div className="mobile-menu__panel">
             <button className="mobile-menu__close" type="button" onClick={() => setOpen(false)}>Закрыть</button>
             <nav aria-label="Мобильная навигация">
-              {navigation.map((item) => <a key={item.href} href={item.href} onClick={() => setOpen(false)}>{item.label}</a>)}
+              {navigation.map((item) => item.href
+                ? <a key={item.href} href={item.href} onClick={() => setOpen(false)}>{item.label}</a>
+                : <span className="nav-placeholder mobile-nav-placeholder" key={item.label}>{item.label}</span>)}
             </nav>
           </div>
         </div>
