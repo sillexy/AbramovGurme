@@ -12,6 +12,11 @@
 }
 
 @media (min-width: 1024px) {
+  /* The card connectors live above each card, so they must not be clipped. */
+  .ecosystem-grid article {
+    overflow: visible;
+  }
+
   .flagship-band::after {
     top: 100%;
     left: 50%;
