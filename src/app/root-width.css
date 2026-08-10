@@ -179,6 +179,27 @@ body > #top,
   }
 }
 
+/* Three-jars card: match the vertical inset of the four daypart cards above. */
+.three-jars {
+  min-height: 0;
+  padding-block: 27px 24px;
+}
+
+/* Optical centering for the large 3 against the three text rows. */
+.three-jars__number {
+  display: flex;
+  height: 100%;
+  align-items: center;
+  justify-content: center;
+  line-height: 0.8;
+  transform: translateY(-0.12em);
+}
+
+/* Remove only the decorative baseline that crosses the jar labels. */
+.three-jars__art > g > path:first-child {
+  display: none;
+}
+
 /* Prevent the mobile brand-matrix grid from widening the page because of intrinsic text width. */
 @media (max-width: 767px) {
   .about .section-copy {
