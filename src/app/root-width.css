@@ -24,6 +24,10 @@ body > #top,
 }
 
 /* Philosophy cards: match the illustrated reference while keeping the current first two texts. */
+.about .split-grid {
+  align-items: center;
+}
+
 .about .section-copy h2 {
   margin-bottom: clamp(28px, 3.4vw, 44px);
 }
@@ -94,18 +98,12 @@ body > #top,
   align-items: center;
   padding-left: 24px;
   border-left: 1px solid rgba(185, 120, 69, 0.34);
+  background-image: none;
   font-family: var(--font-display), Georgia, serif;
   font-size: clamp(1.25rem, 1.7vw, 1.55rem);
   font-style: normal;
   font-weight: 500;
   line-height: 1.08;
-}
-
-.about .serif-note {
-  background-image: linear-gradient(rgba(185, 120, 69, 0.32), rgba(185, 120, 69, 0.32));
-  background-position: 108px center;
-  background-repeat: no-repeat;
-  background-size: 1px 58%;
 }
 
 .about .serif-note::after {
@@ -121,14 +119,28 @@ body > #top,
   content: "Мы выбираем стекло — безопасное для вас и бережное к природе.";
 }
 
-/* Fit the philosophy image without cropping and let the section background show through. */
+/* Fit and vertically center the philosophy image against the left content column. */
 .about .editorial-image {
+  align-self: center;
   background: transparent;
 }
 
 .about .editorial-image img {
   object-fit: contain;
   object-position: center;
+}
+
+@media (min-width: 1024px) {
+  .about .split-grid {
+    grid-template-columns: minmax(0, 1.22fr) minmax(0, 0.78fr);
+    gap: clamp(48px, 5vw, 72px);
+  }
+
+  .about .section-copy h2 {
+    max-width: none;
+    white-space: nowrap;
+    font-size: clamp(2.35rem, 3.25vw, 3.35rem);
+  }
 }
 
 /* One shared vertical spacing value for the benefits block. */
@@ -181,8 +193,6 @@ body > #top,
   }
 
   .about .serif-note {
-    background-position: 86px center;
-    background-size: 1px 60%;
     font-size: 1.28rem;
   }
 
