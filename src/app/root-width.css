@@ -23,6 +23,104 @@ body > #top,
   display: none;
 }
 
+/* Philosophy cards: match the illustrated reference while keeping the current first two texts. */
+.about .section-copy h2 {
+  margin-bottom: clamp(28px, 3.4vw, 44px);
+}
+
+.about .outlined-copy,
+.about .serif-note {
+  position: relative;
+  display: grid;
+  grid-template-columns: 72px minmax(0, 1fr);
+  column-gap: 20px;
+  width: 100%;
+  margin-top: 14px;
+  padding: 22px 24px;
+  border: 1px solid rgba(185, 120, 69, 0.34);
+  border-radius: 8px;
+  background: rgba(255, 253, 249, 0.38);
+}
+
+.about .outlined-copy::before,
+.about .serif-note::before {
+  grid-column: 1;
+  grid-row: 1 / span 2;
+  align-self: center;
+  width: 64px;
+  height: 64px;
+  border: 1.4px solid var(--color-copper);
+  border-radius: 50%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 42px 42px;
+  content: "";
+}
+
+.about .outlined-copy:nth-of-type(1)::before {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64' fill='none' stroke='%23B97845' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M24 10h16v7H24zM25 17h14c4 0 7 3 7 7v26c0 5-4 8-8 8H26c-4 0-8-3-8-8V24c0-4 3-7 7-7Z'/%3E%3Cpath d='M31 29c5 1 9 5 9 10-5 0-9-3-10-8-3 3-5 7-4 12 5 0 9-3 11-7'/%3E%3Cpath d='M31 46c2-7 6-12 12-16'/%3E%3C/svg%3E");
+}
+
+.about .outlined-copy:nth-of-type(2)::before {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64' fill='none' stroke='%23B97845' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M7 32c6-11 15-17 25-17s19 6 25 17c-6 11-15 17-25 17S13 43 7 32Z'/%3E%3Ccircle cx='32' cy='32' r='8'/%3E%3Ccircle cx='32' cy='32' r='3'/%3E%3Cpath d='M32 7v5M32 52v5M12 15l4 4M48 15l-4 4'/%3E%3C/svg%3E");
+}
+
+.about .serif-note::before {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64' fill='none' stroke='%23B97845' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M32 53V26'/%3E%3Cpath d='M32 37c-9-2-15-8-16-18 9 0 15 5 16 13 2-8 8-13 17-13-1 10-7 16-17 18Z'/%3E%3Cpath d='M23 27c4 3 7 7 9 12M41 27c-4 3-7 7-9 12'/%3E%3C/svg%3E");
+}
+
+.about .outlined-copy h3 {
+  grid-column: 2;
+  grid-row: 1;
+  align-self: end;
+  margin: 0 0 7px;
+  font-family: var(--font-body), sans-serif;
+  font-size: 1rem;
+  font-weight: 700;
+  line-height: 1.25;
+}
+
+.about .outlined-copy p {
+  grid-column: 2;
+  grid-row: 2;
+  align-self: start;
+  max-width: 580px;
+  margin: 0;
+  line-height: 1.5;
+}
+
+.about .serif-note {
+  grid-template-rows: auto auto;
+  align-items: center;
+  padding-left: 24px;
+  border-left: 1px solid rgba(185, 120, 69, 0.34);
+  font-family: var(--font-display), Georgia, serif;
+  font-size: clamp(1.25rem, 1.7vw, 1.55rem);
+  font-style: normal;
+  font-weight: 500;
+  line-height: 1.08;
+}
+
+.about .serif-note {
+  background-image: linear-gradient(rgba(185, 120, 69, 0.32), rgba(185, 120, 69, 0.32));
+  background-position: 108px center;
+  background-repeat: no-repeat;
+  background-size: 1px 58%;
+}
+
+.about .serif-note::after {
+  grid-column: 2;
+  grid-row: 2;
+  margin-top: 7px;
+  color: var(--color-ink);
+  font-family: var(--font-body), Arial, sans-serif;
+  font-size: 0.94rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 1.45;
+  content: "Мы выбираем стекло — безопасное для вас и бережное к природе.";
+}
+
 /* Fit the philosophy image without cropping and let the section background show through. */
 .about .editorial-image {
   background: transparent;
@@ -57,6 +155,37 @@ body > #top,
 
 /* Prevent the mobile brand-matrix grid from widening the page because of intrinsic text width. */
 @media (max-width: 767px) {
+  .about .outlined-copy,
+  .about .serif-note {
+    grid-template-columns: 60px minmax(0, 1fr);
+    column-gap: 15px;
+    margin-top: 12px;
+    padding: 18px 16px;
+  }
+
+  .about .outlined-copy::before,
+  .about .serif-note::before {
+    width: 54px;
+    height: 54px;
+    background-size: 36px 36px;
+  }
+
+  .about .outlined-copy h3 {
+    font-size: 0.98rem;
+  }
+
+  .about .outlined-copy p,
+  .about .serif-note::after {
+    font-size: 0.9rem;
+    line-height: 1.46;
+  }
+
+  .about .serif-note {
+    background-position: 86px center;
+    background-size: 1px 60%;
+    font-size: 1.28rem;
+  }
+
   .ecosystem-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
