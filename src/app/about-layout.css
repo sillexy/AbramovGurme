@@ -1,0 +1,43 @@
+/* Desktop philosophy layout: let the heading define the left-column width. */
+@media (min-width: 1024px) {
+  .about .split-grid {
+    grid-template-columns: max-content minmax(0, 1fr);
+    align-items: stretch;
+  }
+
+  .about .section-copy {
+    display: grid;
+    width: max-content;
+    max-width: none;
+    justify-self: start;
+  }
+
+  .about .section-copy h2 {
+    width: max-content;
+    max-width: none;
+    white-space: nowrap;
+  }
+
+  /* Inline-size containment prevents card copy from widening the column.
+     The intrinsic width of the heading therefore controls all three cards. */
+  .about .outlined-copy,
+  .about .serif-note {
+    width: 100%;
+    max-width: 100%;
+    contain: inline-size;
+  }
+
+  /* Stretch the image box to the exact height of the left content column.
+     Bottom positioning locks the visible jar artwork to the bottom of card 3. */
+  .about .editorial-image {
+    width: 100%;
+    height: 100%;
+    min-height: 0;
+    align-self: stretch;
+  }
+
+  .about .editorial-image img {
+    object-fit: contain;
+    object-position: center bottom;
+  }
+}
