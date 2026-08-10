@@ -1,5 +1,16 @@
 /* Brand matrix connector paths — desktop tree hierarchy. */
 
+/* Keep A1–A4 badges inside each card with equal top/left spacing. */
+.ecosystem-grid span {
+  position: static;
+}
+
+.ecosystem-grid span::before {
+  top: 14px;
+  left: 14px;
+  z-index: 3;
+}
+
 @media (min-width: 1024px) {
   .flagship-band::after {
     top: 100%;
