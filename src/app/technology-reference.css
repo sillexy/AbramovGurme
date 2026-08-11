@@ -43,7 +43,7 @@
   position: relative;
   display: grid;
   min-height: 226px;
-  padding: 54px 22px 18px 92px;
+  padding: 18px 22px 58px 98px;
   align-content: start;
   border: 1px solid rgba(185, 120, 69, .25);
   border-radius: 9px;
@@ -53,8 +53,8 @@
 
 .technology-steps article::before {
   position: absolute;
-  top: 56px;
-  left: 24px;
+  top: 68px;
+  left: 26px;
   width: 52px;
   height: 74px;
   background-repeat: no-repeat;
@@ -70,8 +70,8 @@
 .technology-steps article:nth-child(2)::before {
   width: 60px;
   height: 60px;
-  top: 60px;
-  left: 20px;
+  top: 72px;
+  left: 22px;
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64' fill='none'%3E%3Cpath d='M32 4 52 12v17c0 13-8 23-20 30C20 52 12 42 12 29V12L32 4Z' fill='%23502f1e'/%3E%3Ccircle cx='32' cy='31' r='12' fill='none' stroke='%23fffaf3' stroke-width='2.4'/%3E%3Cpath d='M32 19v4M32 39v4M20 31h4M40 31h4M24 23l3 3M37 36l3 3M40 23l-3 3M27 36l-3 3' stroke='%23fffaf3' stroke-width='2.2' stroke-linecap='round'/%3E%3Ccircle cx='32' cy='31' r='3.6' fill='%23fffaf3'/%3E%3C/svg%3E");
 }
 
@@ -81,11 +81,11 @@
 
 .technology-steps article > span {
   position: absolute;
-  top: 12px;
-  left: 16px;
+  top: 18px;
+  left: 24px;
   display: grid;
-  width: 38px;
-  height: 32px;
+  width: 40px;
+  height: 34px;
   place-items: center;
   border-radius: 5px;
   background: #2f1e14;
@@ -96,7 +96,7 @@
 }
 
 .technology-steps article h3 {
-  margin: 0 0 10px;
+  margin: 0 0 7px;
   font-family: var(--font-body), sans-serif;
   font-size: 1.03rem;
   font-weight: 700;
@@ -104,16 +104,17 @@
 }
 
 .technology-steps article p {
+  margin: 0;
   color: #514a44;
   font-size: .78rem;
-  line-height: 1.55;
+  line-height: 1.48;
 }
 
 .technology-steps article::after {
   position: absolute;
-  right: 28px;
-  bottom: 15px;
-  left: 82px;
+  right: 22px;
+  bottom: 18px;
+  left: 98px;
   display: grid;
   min-height: 28px;
   place-items: center;
@@ -354,11 +355,19 @@
   }
 
   .technology-steps article {
-    padding: 52px 18px 18px 84px;
+    padding: 18px 18px 58px 84px;
   }
 
   .technology-steps article::after {
     right: 18px;
-    left: 76px;
+    left: 84px;
+  }
+
+  .technology-steps article > span {
+    left: 18px;
+  }
+
+  .technology-steps article::before {
+    left: 18px;
   }
 }
