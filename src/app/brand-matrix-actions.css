@@ -1,17 +1,18 @@
 /* Brand matrix: compact child cards + real CTA buttons. */
 
+/* Keep all four child cards the same height, but only as tall as the tallest card. */
 .ecosystem-grid {
-  align-items: start;
+  align-items: stretch;
 }
 
 .ecosystem-grid article {
   min-height: 0;
-  height: auto;
+  height: 100%;
   padding-bottom: 16px;
 }
 
 .ecosystem-grid p {
-  flex: 0 0 auto;
+  flex: 1 1 auto;
   padding: 0 58px 56px 0;
 }
 
@@ -56,6 +57,12 @@
 .ecosystem-cta:focus-visible {
   outline: 3px solid var(--color-focus);
   outline-offset: 3px;
+}
+
+@media (max-width: 1023px) {
+  .ecosystem-grid article {
+    height: auto;
+  }
 }
 
 @media (max-width: 767px) {
