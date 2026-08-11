@@ -1,16 +1,10 @@
-/* Brand-matrix CTA targets must align exactly with the viewport top. */
+#flagship {
+  scroll-margin-top: clamp(72px, 10vw, 144px) !important;
+}
 
-.offer,
-#flagship,
 #a1,
 #a2,
 #a3,
 #a4 {
-  scroll-margin-top: 0 !important;
-}
-
-.matrix-scroll-target {
-  opacity: 1 !important;
-  transform: none !important;
-  transition: none !important;
+  scroll-margin-top: calc(var(--offer-section-gap, clamp(78px, 11vw, 160px)) / 2) !important;
 }
