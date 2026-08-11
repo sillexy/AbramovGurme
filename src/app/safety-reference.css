@@ -1,0 +1,203 @@
+.safety {
+  background:
+    radial-gradient(circle at 72% 50%, rgba(185,120,69,.10), transparent 34%),
+    #090908;
+}
+
+.safety .split-grid {
+  grid-template-columns: minmax(0, .92fr) minmax(430px, 1.08fr);
+  gap: clamp(46px, 7vw, 88px);
+  align-items: center;
+}
+
+.safety .eyebrow {
+  margin-bottom: 18px;
+  color: #d49b52;
+}
+
+.safety h2 {
+  max-width: 520px;
+  margin-bottom: 26px;
+  color: #fff;
+  font-size: clamp(3.15rem, 5.7vw, 5.7rem);
+  line-height: .92;
+  letter-spacing: -.045em;
+}
+
+.safety-copy {
+  display: grid;
+  gap: 0;
+  max-width: 620px;
+  margin-top: 0;
+  color: #d7d0c7;
+}
+
+.safety-copy p {
+  position: relative;
+  min-height: 112px;
+  padding: 28px 0 26px 84px;
+  border-top: 1px solid rgba(201,158,88,.18);
+  font-size: .92rem;
+  line-height: 1.58;
+}
+
+.safety-copy p:first-child { border-top: 0; }
+
+.safety-copy p::before {
+  position: absolute;
+  top: 22px;
+  left: 0;
+  display: grid;
+  width: 60px;
+  height: 60px;
+  place-items: center;
+  border: 1px solid rgba(201,158,88,.68);
+  border-radius: 8px;
+  color: #e1ae64;
+  font-size: 28px;
+  line-height: 1;
+}
+
+.safety-copy p::after {
+  display: block;
+  margin-bottom: 7px;
+  color: #dca358;
+  font-size: .78rem;
+  font-weight: 700;
+  letter-spacing: .12em;
+  line-height: 1.2;
+  text-transform: uppercase;
+  content: "";
+}
+
+.safety-copy p:nth-child(1)::before { content: "⌾"; }
+.safety-copy p:nth-child(1)::after { content: "Стабильность"; }
+.safety-copy p:nth-child(2)::before { content: "◒"; }
+.safety-copy p:nth-child(2)::after { content: "Безопасность"; }
+.safety-copy p:nth-child(3)::before { content: "▣"; }
+.safety-copy p:nth-child(3)::after { content: "Подтверждено"; }
+
+.safety-number {
+  position: relative;
+  overflow: hidden;
+  display: grid;
+  min-height: 500px;
+  align-content: start;
+  justify-items: center;
+  padding: 54px 42px 40px;
+  border: 1px solid rgba(201,158,88,.72);
+  border-radius: 20px;
+  background:
+    radial-gradient(circle at 50% 28%, rgba(212,155,82,.24), transparent 28%),
+    linear-gradient(145deg, rgba(185,120,69,.15), rgba(20,15,10,.48) 52%, rgba(8,8,7,.72));
+  box-shadow: inset 0 0 55px rgba(201,158,88,.05);
+}
+
+.safety-number::before {
+  position: absolute;
+  right: 38px;
+  bottom: 122px;
+  left: 38px;
+  height: 1px;
+  background: rgba(201,158,88,.74);
+  content: "";
+}
+
+.safety-number::after {
+  position: absolute;
+  bottom: 116px;
+  left: 38px;
+  width: 9px;
+  height: 9px;
+  border: 1px solid #d9a65e;
+  border-radius: 50%;
+  background: #d9a65e;
+  box-shadow: calc(100% + 351px) 0 0 -1px #090908, calc(100% + 351px) 0 0 0 #d9a65e;
+  content: "";
+}
+
+.safety-number strong {
+  margin-top: 8px;
+  color: #e7b96f;
+  font-size: clamp(9rem, 18vw, 15rem);
+  line-height: .72;
+  letter-spacing: -.07em;
+  text-shadow: 0 0 28px rgba(226,186,124,.08);
+}
+
+.safety-number span {
+  margin-top: 22px;
+  color: #e3b271;
+  font-size: 1.05rem;
+  letter-spacing: .16em;
+}
+
+.safety-number p {
+  position: absolute;
+  right: 38px;
+  bottom: 34px;
+  left: 38px;
+  margin: 0;
+  color: #d8d1c8;
+  font-size: .9rem;
+  line-height: 1.55;
+}
+
+.safety-number p::before,
+.safety-number p::after {
+  position: absolute;
+  bottom: 72px;
+  color: #d8d1c8;
+  font-size: .77rem;
+  line-height: 1.35;
+  white-space: pre-line;
+}
+
+.safety-number p::before {
+  left: 0;
+  content: "ДЕНЬ 1\AГотово к употреблению";
+}
+
+.safety-number p::after {
+  right: 0;
+  text-align: right;
+  content: "ДЕНЬ 365\AВсё ещё свежее";
+}
+
+@media (max-width: 1023px) {
+  .safety .split-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .safety-number {
+    min-height: 460px;
+  }
+}
+
+@media (max-width: 640px) {
+  .safety h2 {
+    font-size: clamp(2.7rem, 14vw, 4.6rem);
+  }
+
+  .safety-copy p {
+    min-height: 0;
+    padding: 24px 0 24px 66px;
+  }
+
+  .safety-copy p::before {
+    width: 48px;
+    height: 48px;
+    font-size: 22px;
+  }
+
+  .safety-number {
+    min-height: 430px;
+    padding: 42px 24px 32px;
+  }
+
+  .safety-number::before { right: 24px; left: 24px; }
+  .safety-number::after { left: 24px; }
+  .safety-number p { right: 24px; left: 24px; font-size: .82rem; }
+  .safety-number p::before,
+  .safety-number p::after { font-size: .68rem; }
+}

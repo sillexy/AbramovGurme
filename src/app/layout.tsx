@@ -15,6 +15,7 @@ import "./offer-price-style.css";
 import "./header-logo.css";
 import "./contact-dialog-contacts.css";
 import "./footer-contacts.css";
+import "./safety-reference.css";
 
 const display = Cormorant_Garamond({ subsets: ["cyrillic", "latin"], weight: ["500", "600"], variable: "--font-display" });
 const body = Manrope({ subsets: ["cyrillic", "latin"], weight: ["400", "500", "600", "700"], variable: "--font-body" });
