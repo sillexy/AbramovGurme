@@ -1,0 +1,36 @@
+.contact-dialog__contacts {
+  display: grid;
+  gap: 18px;
+}
+
+.contact-dialog__person {
+  display: grid;
+  gap: 7px;
+  padding: 18px 0 0;
+  border-top: 1px solid var(--color-line);
+}
+
+.contact-dialog__person:first-child {
+  padding-top: 0;
+  border-top: 0;
+}
+
+.contact-dialog__person > span {
+  color: var(--color-copper);
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.contact-dialog__person > strong {
+  font-family: var(--font-display), Georgia, serif;
+  font-size: 1.45rem;
+  font-weight: 500;
+  line-height: 1.1;
+}
+
+.contact-dialog__person > .button {
+  width: 100%;
+  margin-top: 4px;
+}
