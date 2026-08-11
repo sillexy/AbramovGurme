@@ -122,13 +122,35 @@
 }
 
 .micromarket .micromarket-load {
+  display: grid;
+  min-height: 86px;
   margin-top: 2px;
-  padding: 14px 0 0;
-  border-top: 1px solid var(--color-copper);
-  color: #2c241f;
-  font-size: .86rem;
-  font-weight: 700;
+  padding: 14px 20px;
+  grid-template-columns: 58px minmax(0, 1fr);
+  gap: 18px;
+  align-items: center;
+  border: 1px solid rgba(201, 158, 88, .46);
+  border-radius: 7px;
+  background:
+    radial-gradient(circle at 16% 50%, rgba(229, 174, 89, .22), transparent 26%),
+    linear-gradient(90deg, #fff9ec 0%, #fffdf7 58%, #fbefd5 100%);
+  color: #3a3029;
+  font-size: .92rem;
+  font-weight: 600;
   line-height: 1.35;
+}
+
+.micromarket .micromarket-load::before {
+  display: block;
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background:
+    #d89b27
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48' fill='none' stroke='%23FFF7E8' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M17 9h14M19 9v5h10V9M16 14h16v4H16zM15 18h18v20H15z'/%3E%3Cpath d='M20 23h8v10h-8zM22 27h4M24 25v4'/%3E%3C/svg%3E")
+    center / 34px 34px no-repeat;
+  box-shadow: inset 0 0 0 1px rgba(255,255,255,.28);
+  content: "";
 }
 
 /* Keep the supplied micromarket photo fully visible on the right. */
@@ -202,5 +224,19 @@
   .micromarket .micromarket-list h3,
   .micromarket .micromarket-list article > p {
     grid-column: 2;
+  }
+
+  .micromarket .micromarket-load {
+    min-height: 76px;
+    padding: 12px 14px;
+    grid-template-columns: 50px minmax(0, 1fr);
+    gap: 14px;
+    font-size: .84rem;
+  }
+
+  .micromarket .micromarket-load::before {
+    width: 50px;
+    height: 50px;
+    background-size: 30px 30px;
   }
 }
