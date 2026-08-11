@@ -1,36 +1,91 @@
+.contact-dialog__panel {
+  position: relative;
+  gap: 34px;
+}
+
+.contact-dialog__heading {
+  padding-right: 48px;
+}
+
 .contact-dialog__contacts {
   display: grid;
-  gap: 18px;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 28px;
 }
 
 .contact-dialog__person {
   display: grid;
+  align-content: start;
   gap: 7px;
-  padding: 18px 0 0;
-  border-top: 1px solid var(--color-line);
+  min-width: 0;
+  padding: 0;
+  border: 0;
 }
 
-.contact-dialog__person:first-child {
-  padding-top: 0;
-  border-top: 0;
-}
-
-.contact-dialog__person > span {
+.contact-dialog__role {
   color: var(--color-copper);
   font-size: 0.75rem;
   font-weight: 700;
   letter-spacing: 0.12em;
+  line-height: 1.3;
   text-transform: uppercase;
 }
 
-.contact-dialog__person > strong {
+.contact-dialog__name {
+  color: var(--color-ink);
   font-family: var(--font-display), Georgia, serif;
-  font-size: 1.45rem;
+  font-size: 1.6rem;
   font-weight: 500;
-  line-height: 1.1;
+  line-height: 1.08;
 }
 
-.contact-dialog__person > .button {
-  width: 100%;
-  margin-top: 4px;
+.contact-dialog__phone {
+  width: fit-content;
+  margin-top: 3px;
+  color: var(--color-ink);
+  font-size: 1rem;
+  font-weight: 600;
+  line-height: 1.4;
+}
+
+.contact-dialog__phone:hover {
+  color: var(--color-copper);
+}
+
+.contact-dialog__close {
+  position: absolute;
+  z-index: 2;
+  top: 18px;
+  right: 18px;
+  display: grid;
+  width: 40px;
+  height: 40px;
+  place-items: center;
+  padding: 0;
+  border: 1px solid rgba(185, 120, 69, 0.35);
+  border-radius: 50%;
+  background: transparent;
+  color: var(--color-ink);
+  font-family: Arial, sans-serif;
+  font-size: 1.75rem;
+  font-weight: 300;
+  line-height: 1;
+  cursor: pointer;
+}
+
+.contact-dialog__close:hover {
+  border-color: var(--color-copper);
+  color: var(--color-copper);
+}
+
+@media (max-width: 640px) {
+  .contact-dialog__contacts {
+    grid-template-columns: 1fr;
+    gap: 22px;
+  }
+
+  .contact-dialog__person + .contact-dialog__person {
+    padding-top: 22px;
+    border-top: 1px solid var(--color-line);
+  }
 }
