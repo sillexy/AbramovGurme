@@ -12,6 +12,13 @@ export type NavigationItem = {
   label: string;
 };
 
+export type ContactPerson = {
+  role: string;
+  name: string;
+  phone: string;
+  phoneHref: string;
+};
+
 export const navigation: readonly NavigationItem[] = [
   { href: "#about", label: "О продукте" },
   { href: "#offers", label: "Направления" },
@@ -20,12 +27,28 @@ export const navigation: readonly NavigationItem[] = [
   { href: null, label: "Дилеры" },
 ] as const;
 
+export const contacts: readonly ContactPerson[] = [
+  {
+    role: "Генеральный директор",
+    name: "Артур Аслаев",
+    phone: "+7 (926) 540-20-96",
+    phoneHref: "tel:+79265402096",
+  },
+  {
+    role: "Исполнитель",
+    name: "Ирина Фалева",
+    phone: "+7 (999) 514-62-98",
+    phoneHref: "tel:+79995146298",
+  },
+] as const;
+
+/* Compatibility object for the existing footer markup. */
 export const contact = {
-  name: "Андрей Абрамов",
-  phone: "+7 980 409 3293",
-  phoneHref: "tel:+79804093293",
-  email: "aa@aa1.ru",
-  emailHref: "mailto:aa@aa1.ru",
+  name: contacts[0].name,
+  phone: contacts[0].phone,
+  phoneHref: contacts[0].phoneHref,
+  email: contacts[1].phone,
+  emailHref: contacts[1].phoneHref,
 } as const;
 
 export const directions: Direction[] = [
