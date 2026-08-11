@@ -1,3 +1,137 @@
+.micromarket {
+  background: #faf8f3;
+}
+
+.micromarket .split-grid {
+  grid-template-columns: minmax(0, .96fr) minmax(420px, 1.04fr);
+  gap: clamp(44px, 6vw, 82px);
+  align-items: start;
+}
+
+.micromarket .section-copy {
+  width: 100%;
+  max-width: 570px;
+}
+
+.micromarket .eyebrow {
+  margin-bottom: 22px;
+}
+
+.micromarket #micromarket-title {
+  max-width: 570px;
+  margin-bottom: clamp(30px, 4vw, 44px);
+  font-size: clamp(3rem, 4.7vw, 4.9rem);
+  line-height: .92;
+  letter-spacing: -.048em;
+}
+
+.micromarket .micromarket-list {
+  display: grid;
+  gap: 10px;
+}
+
+.micromarket .micromarket-list article {
+  position: relative;
+  display: grid;
+  min-height: 94px;
+  padding: 16px 16px;
+  grid-template-columns: 52px minmax(0, 1fr) auto;
+  grid-template-rows: auto auto;
+  column-gap: 16px;
+  row-gap: 6px;
+  align-items: center;
+  border: 1px solid rgba(185, 120, 69, .28);
+  border-radius: 6px;
+  background: rgba(255, 255, 255, .24);
+}
+
+.micromarket .micromarket-list article::before {
+  width: 48px;
+  height: 48px;
+  grid-column: 1;
+  grid-row: 1 / 3;
+  align-self: center;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 44px 44px;
+  content: "";
+}
+
+.micromarket .micromarket-list article:nth-child(1)::before {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48' fill='none' stroke='%23B97845' stroke-width='1.6' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M9 20V9h11M28 9h11v11M39 28v11H28M20 39H9V28' stroke-dasharray='3 3'/%3E%3Cpath d='M15 33 33 15M23 15h10v10'/%3E%3C/svg%3E");
+}
+
+.micromarket .micromarket-list article:nth-child(2)::before {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48' fill='none' stroke='%23B97845' stroke-width='1.7' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M16 9v9M32 9v9M12 18h24v8c0 7-5 12-12 12S12 33 12 26v-8Z'/%3E%3Cpath d='M24 38v5M20 43h8'/%3E%3C/svg%3E");
+}
+
+.micromarket .micromarket-list article:nth-child(3)::before {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48' fill='none' stroke='%23B97845' stroke-width='1.6' stroke-linecap='round' stroke-linejoin='round'%3E%3Ccircle cx='27' cy='24' r='15'/%3E%3Cpath d='M27 14v10l-7 5M7 18h8M5 24h8M7 30h8'/%3E%3C/svg%3E");
+}
+
+.micromarket .micromarket-list article::after {
+  grid-column: 3;
+  grid-row: 1 / 3;
+  justify-self: end;
+  align-self: center;
+  padding: 9px 12px;
+  border: 1px solid rgba(185, 120, 69, .42);
+  border-radius: 5px;
+  color: #332a23;
+  background: rgba(255, 253, 248, .5);
+  font-size: .76rem;
+  font-weight: 500;
+  line-height: 1;
+  white-space: nowrap;
+}
+
+.micromarket .micromarket-list article:nth-child(1)::after {
+  content: "1,2 м²";
+}
+
+.micromarket .micromarket-list article:nth-child(2)::after {
+  content: "1 розетка";
+}
+
+.micromarket .micromarket-list article:nth-child(3)::after {
+  content: "24 часа";
+}
+
+.micromarket .micromarket-list h3 {
+  grid-column: 2;
+  grid-row: 1;
+  margin: 0;
+  font-family: var(--font-body), sans-serif;
+  font-size: .86rem;
+  font-weight: 700;
+  line-height: 1.25;
+}
+
+.micromarket .micromarket-list article > p {
+  grid-column: 2;
+  grid-row: 2;
+  margin: 0;
+  color: #5f574f;
+  font-size: .76rem;
+  line-height: 1.45;
+}
+
+.micromarket .micromarket-list article > p strong {
+  color: #332a23;
+  font-weight: 700;
+}
+
+.micromarket .micromarket-load {
+  margin-top: 2px;
+  padding: 14px 0 0;
+  border-top: 1px solid var(--color-copper);
+  color: #2c241f;
+  font-size: .86rem;
+  font-weight: 700;
+  line-height: 1.35;
+}
+
+/* Keep the supplied micromarket photo fully visible on the right. */
 .micromarket .editorial-image {
   width: min(100%, clamp(460px, 41vw, 540px));
   height: auto;
@@ -10,9 +144,6 @@
   background: transparent;
 }
 
-/* SourceImage uses next/image with fill. For this specific editorial photo,
-   return the image to normal document flow so the wrapper takes the photo's
-   natural 3:4 height instead of cropping it to a fixed box. */
 .micromarket .editorial-image img {
   position: static !important;
   inset: auto !important;
@@ -24,9 +155,52 @@
 }
 
 @media (max-width: 1023px) {
+  .micromarket .split-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .micromarket .section-copy {
+    max-width: none;
+  }
+
+  .micromarket #micromarket-title {
+    max-width: 680px;
+  }
+
   .micromarket .editorial-image {
     width: min(100%, 560px);
-    margin-top: 0;
+    margin-top: 18px;
     justify-self: center;
+  }
+}
+
+@media (max-width: 640px) {
+  .micromarket #micromarket-title {
+    font-size: clamp(2.7rem, 13vw, 4rem);
+  }
+
+  .micromarket .micromarket-list article {
+    padding: 14px;
+    grid-template-columns: 46px minmax(0, 1fr);
+    column-gap: 13px;
+  }
+
+  .micromarket .micromarket-list article::before {
+    width: 42px;
+    height: 42px;
+    background-size: 40px 40px;
+  }
+
+  .micromarket .micromarket-list article::after {
+    grid-column: 2;
+    grid-row: 3;
+    justify-self: start;
+    margin-top: 3px;
+    padding: 8px 10px;
+  }
+
+  .micromarket .micromarket-list h3,
+  .micromarket .micromarket-list article > p {
+    grid-column: 2;
   }
 }
