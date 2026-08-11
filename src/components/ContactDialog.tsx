@@ -50,12 +50,7 @@ export function ContactDialog({ className = "" }: ContactDialogProps) {
               <section className="contact-dialog__person" key={person.phoneHref}>
                 <span className="contact-dialog__role">{person.role}</span>
                 <strong className="contact-dialog__name">{person.name}</strong>
-                <a className="contact-dialog__phone" href={person.phoneHref}>
-                  <svg aria-hidden="true" viewBox="0 0 24 24">
-                    <path d="M5 4h3l2 5-2 1.5a14 14 0 0 0 5.5 5.5L15 14l5 2v3c0 1.1-.9 2-2 2C10.3 21 3 13.7 3 6c0-1.1.9-2 2-2Z" />
-                  </svg>
-                  {person.phone}
-                </a>
+                <a className="contact-dialog__phone" href={person.phoneHref}>{person.phone}</a>
               </section>
             ))}
           </div>
