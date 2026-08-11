@@ -92,27 +92,22 @@
   box-shadow: inset 0 0 55px rgba(201,158,88,.05);
 }
 
+/* Timeline: line first, labels below it, description below the labels. */
 .safety-number::before {
   position: absolute;
   right: 38px;
-  bottom: 122px;
+  bottom: 160px;
   left: 38px;
-  height: 1px;
-  background: rgba(201,158,88,.74);
+  height: 9px;
+  background:
+    radial-gradient(circle at left center, #d9a65e 0 4px, transparent 4.5px),
+    radial-gradient(circle at right center, #090908 0 3px, #d9a65e 3.5px 4.5px, transparent 5px),
+    linear-gradient(to bottom, transparent 4px, rgba(201,158,88,.74) 4px 5px, transparent 5px);
   content: "";
 }
 
 .safety-number::after {
-  position: absolute;
-  bottom: 116px;
-  left: 38px;
-  width: 9px;
-  height: 9px;
-  border: 1px solid #d9a65e;
-  border-radius: 50%;
-  background: #d9a65e;
-  box-shadow: calc(100% + 351px) 0 0 -1px #090908, calc(100% + 351px) 0 0 0 #d9a65e;
-  content: "";
+  content: none;
 }
 
 .safety-number strong {
@@ -134,7 +129,7 @@
 .safety-number p {
   position: absolute;
   right: 38px;
-  bottom: 34px;
+  bottom: 28px;
   left: 38px;
   margin: 0;
   color: #d8d1c8;
@@ -145,10 +140,10 @@
 .safety-number p::before,
 .safety-number p::after {
   position: absolute;
-  bottom: 72px;
+  bottom: calc(100% + 14px);
   color: #d8d1c8;
   font-size: .77rem;
-  line-height: 1.35;
+  line-height: 1.7;
   white-space: pre-line;
 }
 
@@ -169,7 +164,7 @@
   }
 
   .safety-number {
-    min-height: 460px;
+    min-height: 500px;
   }
 }
 
@@ -190,13 +185,26 @@
   }
 
   .safety-number {
-    min-height: 430px;
+    min-height: 520px;
     padding: 42px 24px 32px;
   }
 
-  .safety-number::before { right: 24px; left: 24px; }
-  .safety-number::after { left: 24px; }
-  .safety-number p { right: 24px; left: 24px; font-size: .82rem; }
+  .safety-number::before {
+    right: 24px;
+    bottom: 210px;
+    left: 24px;
+  }
+
+  .safety-number p {
+    right: 24px;
+    bottom: 26px;
+    left: 24px;
+    font-size: .82rem;
+  }
+
   .safety-number p::before,
-  .safety-number p::after { font-size: .68rem; }
+  .safety-number p::after {
+    bottom: calc(100% + 14px);
+    font-size: .68rem;
+  }
 }
