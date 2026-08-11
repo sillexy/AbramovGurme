@@ -1,0 +1,19 @@
+.micromarket .editorial-image {
+  width: 100%;
+  min-height: 0;
+  aspect-ratio: 3 / 4;
+  align-self: start;
+  background: transparent;
+}
+
+.micromarket .editorial-image img {
+  object-fit: contain;
+  object-position: center top;
+}
+
+@media (max-width: 1023px) {
+  .micromarket .editorial-image {
+    width: min(100%, 640px);
+    justify-self: center;
+  }
+}
