@@ -98,11 +98,11 @@
   right: 38px;
   bottom: 160px;
   left: 38px;
-  height: 9px;
+  height: 10px;
   background:
-    radial-gradient(circle at left center, #d9a65e 0 4px, transparent 4.5px),
-    radial-gradient(circle at right center, #090908 0 3px, #d9a65e 3.5px 4.5px, transparent 5px),
-    linear-gradient(to bottom, transparent 4px, rgba(201,158,88,.74) 4px 5px, transparent 5px);
+    radial-gradient(circle at 5px center, #d9a65e 0 4px, transparent 4.5px),
+    radial-gradient(circle at calc(100% - 5px) center, #090908 0 3px, #d9a65e 3.5px 4.5px, transparent 5px),
+    linear-gradient(to bottom, transparent 4.5px, rgba(201,158,88,.74) 4.5px 5.5px, transparent 5.5px);
   content: "";
 }
 
