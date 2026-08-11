@@ -1,24 +1,27 @@
 /* Keep the original detailed-offers background for flagship, fitness and desserts. */
 .offers {
+  padding-block: 0;
   background: #faf8f3;
 }
 
+/* Every one of the five direction blocks owns the same vertical whitespace.
+   No shared grid gap is used, so top/bottom spacing is identical per block. */
 .offers__inner {
-  --offer-section-gap: clamp(78px, 11vw, 160px);
-  gap: var(--offer-section-gap);
+  --offer-block-space: clamp(72px, 8vw, 112px);
+  gap: 0;
+}
+
+.offer {
+  position: relative;
+  isolation: isolate;
+  padding-block: var(--offer-block-space);
 }
 
 /* In the current offer order only Lunches and Bars are .offer--reverse. */
-.offer--reverse {
-  position: relative;
-  isolation: isolate;
-}
-
 .offer--reverse::before {
   position: absolute;
   z-index: -1;
-  top: calc(var(--offer-section-gap) / -2);
-  bottom: calc(var(--offer-section-gap) / -2);
+  inset-block: 0;
   left: 50%;
   width: 100vw;
   background: var(--color-ivory);
