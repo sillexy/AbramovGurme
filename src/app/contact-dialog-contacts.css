@@ -44,9 +44,10 @@
 .contact-dialog__name {
   color: var(--color-ink);
   font-family: var(--font-display), Georgia, serif;
-  font-size: 1.6rem;
+  font-size: 1.9rem;
   font-weight: 500;
-  line-height: 1.08;
+  line-height: 1.05;
+  white-space: nowrap;
 }
 
 .contact-dialog__phone {
@@ -113,5 +114,9 @@
 
   .contact-dialog__phone {
     width: 100%;
+  }
+
+  .contact-dialog__name {
+    font-size: 1.75rem;
   }
 }
