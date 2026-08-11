@@ -10,10 +10,10 @@
 .contact-dialog__title {
   margin: 0;
   color: var(--color-ink);
-  font-size: .82rem;
+  font-size: 1.15rem;
   font-weight: 700;
   letter-spacing: .14em;
-  line-height: 1.3;
+  line-height: 1.2;
   text-transform: uppercase;
 }
 
@@ -55,7 +55,7 @@
   min-height: 42px;
   margin-top: 5px;
   align-items: center;
-  gap: 9px;
+  justify-content: center;
   padding: 9px 14px;
   border: 1px solid rgba(185, 120, 69, .46);
   border-radius: 6px;
@@ -67,26 +67,11 @@
   transition: background-color .18s ease, border-color .18s ease, color .18s ease, transform .18s ease;
 }
 
-.contact-dialog__phone svg {
-  width: 17px;
-  height: 17px;
-  flex: 0 0 17px;
-  fill: none;
-  stroke: var(--color-copper);
-  stroke-linecap: round;
-  stroke-linejoin: round;
-  stroke-width: 1.7;
-}
-
 .contact-dialog__phone:hover {
   border-color: var(--color-copper);
   background: var(--color-copper);
   color: #fff;
   transform: translateY(-1px);
-}
-
-.contact-dialog__phone:hover svg {
-  stroke: currentColor;
 }
 
 .contact-dialog__close {
@@ -128,6 +113,5 @@
 
   .contact-dialog__phone {
     width: 100%;
-    justify-content: center;
   }
 }
