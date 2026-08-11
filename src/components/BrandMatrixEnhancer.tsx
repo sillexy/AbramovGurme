@@ -13,11 +13,26 @@ export function BrandMatrixEnhancer() {
 
     nodes.forEach((node, index) => {
       if (node.querySelector(":scope > .ecosystem-cta")) return;
+
+      const targetSelector = targets[index] ?? "#offers";
       const link = document.createElement("a");
       link.className = "ecosystem-cta";
-      link.href = targets[index] ?? "#offers";
+      link.href = targetSelector;
       link.setAttribute("aria-label", labels[index] ?? "Перейти к направлению");
       link.textContent = "→";
+
+      link.addEventListener("click", (event) => {
+        const target = document.querySelector<HTMLElement>(targetSelector);
+        if (!target) return;
+
+        const offer = target.closest<HTMLElement>(".offer") ?? target;
+        event.preventDefault();
+
+        const top = offer.getBoundingClientRect().top + window.scrollY;
+        window.history.replaceState(null, "", targetSelector);
+        window.scrollTo({ top, behavior: "smooth" });
+      });
+
       node.appendChild(link);
     });
   }, []);
