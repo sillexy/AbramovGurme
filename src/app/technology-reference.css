@@ -249,7 +249,8 @@
 .technology-disclosure__grid ul {
   max-width: none;
   margin: 0;
-  padding: 0 0 0 18px;
+  padding: 0;
+  list-style: none;
 }
 
 .technology-disclosure__grid li {
