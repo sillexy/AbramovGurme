@@ -55,5 +55,42 @@ const disclosureScript = String.raw`(() => {
 })();`;
 
 export function TechnologyDisclosure({ children }: { children: ReactNode }) {
-  return <><details className="technology-disclosure"><summary>Подробнее о технологии</summary><div className="technology-disclosure__content">{children}</div></details><script dangerouslySetInnerHTML={{ __html: disclosureScript }} /></>;
+  void children;
+
+  return <>
+    <details className="technology-disclosure" open>
+      <summary>Подробнее о технологии</summary>
+      <div className="technology-disclosure__content">
+        <div className="technology-disclosure__grid">
+          <section>
+            <h3><span>01</span>Нагрев и выдержка</h3>
+            <ul>
+              <li>Нагрев продукта выше <strong>89°C</strong>, обычно до <strong>115–135°C</strong>.</li>
+              <li>Температура и время подбираются для конкретного типа блюда.</li>
+            </ul>
+          </section>
+          <section>
+            <h3><span>02</span>Стерилизация</h3>
+            <ul>
+              <li>Высокая температура и давление разрушают белковые структуры микроорганизмов, включая термостойкие споры бактерий.</li>
+              <li>Уничтожение микроорганизмов зависит от температуры и длительности воздействия.</li>
+            </ul>
+          </section>
+          <section>
+            <h3><span>03</span>Охлаждение</h3>
+            <ul>
+              <li>Температура и давление плавно снижаются, чтобы предотвратить деформацию продуктов и стеклянной тары.</li>
+              <li>Индивидуальные режимы определяются с учетом pH, консистенции и объема тары.</li>
+            </ul>
+          </section>
+        </div>
+        <div className="technology-disclosure__requirement">
+          <span aria-hidden="true">i</span>
+          <strong>Общее требование</strong>
+          <p>Герметичность упаковки обязательна; нарушение отражается на состоянии клапана/крышки.</p>
+        </div>
+      </div>
+    </details>
+    <script dangerouslySetInnerHTML={{ __html: disclosureScript }} />
+  </>;
 }
