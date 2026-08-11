@@ -5,6 +5,18 @@ import { useEffect } from "react";
 const targets = ["#flagship", "#a1", "#a2", "#a3", "#a4"] as const;
 const labels = ["Перейти к Абрамов Гурме", "Перейти к Ланчам", "Перейти к Фитнес", "Перейти к Для баров", "Перейти к Десертам"] as const;
 
+function getLayoutTop(element: HTMLElement) {
+  let top = 0;
+  let current: HTMLElement | null = element;
+
+  while (current) {
+    top += current.offsetTop;
+    current = current.offsetParent as HTMLElement | null;
+  }
+
+  return top;
+}
+
 export function BrandMatrixEnhancer() {
   useEffect(() => {
     const flagship = document.querySelector<HTMLElement>(".flagship-band");
@@ -28,9 +40,19 @@ export function BrandMatrixEnhancer() {
         const offer = target.closest<HTMLElement>(".offer") ?? target;
         event.preventDefault();
 
-        const top = offer.getBoundingClientRect().top + window.scrollY;
+        // offsetTop follows the real document layout and ignores Reveal's
+        // temporary translateY transform, which previously shifted some targets.
+        const top = getLayoutTop(offer);
+        const root = document.documentElement;
+        const previousBehavior = root.style.scrollBehavior;
+        root.style.scrollBehavior = "auto";
+
+        window.scrollTo(0, top);
         window.history.replaceState(null, "", targetSelector);
-        window.scrollTo({ top, behavior: "smooth" });
+
+        requestAnimationFrame(() => {
+          root.style.scrollBehavior = previousBehavior;
+        });
       });
 
       node.appendChild(link);
