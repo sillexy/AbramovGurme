@@ -1,0 +1,5 @@
+/* Price badges in the five detailed direction blocks. */
+.price {
+  background: rgba(9, 9, 8, 0.85);
+  border-radius: 8px;
+}
