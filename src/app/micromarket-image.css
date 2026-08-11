@@ -162,7 +162,8 @@
   margin-top: 32px;
   justify-self: center;
   align-self: start;
-  overflow: visible;
+  overflow: hidden;
+  border-radius: 14px;
   background: transparent;
 }
 
@@ -172,6 +173,7 @@
   display: block;
   width: 100% !important;
   height: auto !important;
+  border-radius: 14px;
   object-fit: contain !important;
   object-position: center top !important;
 }
