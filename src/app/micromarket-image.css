@@ -1,19 +1,32 @@
 .micromarket .editorial-image {
-  width: 100%;
+  width: min(100%, clamp(460px, 41vw, 540px));
+  height: auto;
   min-height: 0;
-  aspect-ratio: 3 / 4;
+  aspect-ratio: auto;
+  margin-top: 32px;
+  justify-self: center;
   align-self: start;
+  overflow: visible;
   background: transparent;
 }
 
+/* SourceImage uses next/image with fill. For this specific editorial photo,
+   return the image to normal document flow so the wrapper takes the photo's
+   natural 3:4 height instead of cropping it to a fixed box. */
 .micromarket .editorial-image img {
-  object-fit: contain;
-  object-position: center top;
+  position: static !important;
+  inset: auto !important;
+  display: block;
+  width: 100% !important;
+  height: auto !important;
+  object-fit: contain !important;
+  object-position: center top !important;
 }
 
 @media (max-width: 1023px) {
   .micromarket .editorial-image {
-    width: min(100%, 640px);
+    width: min(100%, 560px);
+    margin-top: 0;
     justify-self: center;
   }
 }
