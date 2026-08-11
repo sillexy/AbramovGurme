@@ -44,21 +44,6 @@
 .safety-copy p:first-child { border-top: 0; }
 
 .safety-copy p::before {
-  position: absolute;
-  top: 22px;
-  left: 0;
-  display: grid;
-  width: 60px;
-  height: 60px;
-  place-items: center;
-  border: 1px solid rgba(201,158,88,.68);
-  border-radius: 8px;
-  color: #e1ae64;
-  font-size: 28px;
-  line-height: 1;
-}
-
-.safety-copy p::after {
   display: block;
   margin-bottom: 7px;
   color: #dca358;
@@ -70,12 +55,26 @@
   content: "";
 }
 
-.safety-copy p:nth-child(1)::before { content: "⌾"; }
-.safety-copy p:nth-child(1)::after { content: "Стабильность"; }
-.safety-copy p:nth-child(2)::before { content: "◒"; }
-.safety-copy p:nth-child(2)::after { content: "Безопасность"; }
-.safety-copy p:nth-child(3)::before { content: "▣"; }
-.safety-copy p:nth-child(3)::after { content: "Подтверждено"; }
+.safety-copy p::after {
+  position: absolute;
+  top: 22px;
+  left: 0;
+  width: 60px;
+  height: 60px;
+  border: 1px solid rgba(201,158,88,.68);
+  border-radius: 8px;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 32px 32px;
+  content: "";
+}
+
+.safety-copy p:nth-child(1)::before { content: "Стабильность"; }
+.safety-copy p:nth-child(1)::after { background-image: url("/icons/safety-stability.svg"); }
+.safety-copy p:nth-child(2)::before { content: "Безопасность"; }
+.safety-copy p:nth-child(2)::after { background-image: url("/icons/safety-safe.svg"); }
+.safety-copy p:nth-child(3)::before { content: "Подтверждено"; }
+.safety-copy p:nth-child(3)::after { background-image: url("/icons/safety-confirmed.svg"); }
 
 .safety-number {
   position: relative;
@@ -184,10 +183,10 @@
     padding: 24px 0 24px 66px;
   }
 
-  .safety-copy p::before {
+  .safety-copy p::after {
     width: 48px;
     height: 48px;
-    font-size: 22px;
+    background-size: 26px 26px;
   }
 
   .safety-number {
