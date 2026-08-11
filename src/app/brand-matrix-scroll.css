@@ -1,0 +1,19 @@
+/* Anchor landing position for brand-matrix CTA links. */
+
+#flagship,
+#a1,
+#a2,
+#a3,
+#a4 {
+  scroll-margin-top: calc(var(--header-height) + 28px);
+}
+
+@media (max-width: 767px) {
+  #flagship,
+  #a1,
+  #a2,
+  #a3,
+  #a4 {
+    scroll-margin-top: calc(var(--header-height) + 18px);
+  }
+}
