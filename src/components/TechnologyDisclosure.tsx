@@ -58,7 +58,7 @@ export function TechnologyDisclosure({ children }: { children: ReactNode }) {
   void children;
 
   return <>
-    <details className="technology-disclosure" open>
+    <details className="technology-disclosure">
       <summary>Подробнее о технологии</summary>
       <div className="technology-disclosure__content">
         <div className="technology-disclosure__grid">
