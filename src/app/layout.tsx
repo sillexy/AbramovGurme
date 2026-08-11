@@ -12,6 +12,7 @@ import "./brand-matrix-flagship.css";
 import "./brand-matrix-actions.css";
 import "./brand-matrix-scroll.css";
 import "./offer-price-style.css";
+import "./header-logo.css";
 
 const display = Cormorant_Garamond({ subsets: ["cyrillic", "latin"], weight: ["500", "600"], variable: "--font-display" });
 const body = Manrope({ subsets: ["cyrillic", "latin"], weight: ["400", "500", "600", "700"], variable: "--font-body" });
