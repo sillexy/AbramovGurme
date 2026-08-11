@@ -1,10 +1,9 @@
-#flagship {
-  scroll-margin-top: clamp(72px, 10vw, 144px) !important;
-}
+/* Brand-matrix CTA anchors land on the visual top edge of each offer block. */
 
+#flagship,
 #a1,
 #a2,
 #a3,
 #a4 {
-  scroll-margin-top: calc(var(--offer-section-gap, clamp(78px, 11vw, 160px)) / 2) !important;
+  scroll-margin-top: var(--offer-block-space, clamp(72px, 8vw, 112px)) !important;
 }
