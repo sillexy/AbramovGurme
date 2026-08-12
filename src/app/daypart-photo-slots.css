@@ -4,14 +4,25 @@
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
+  border-radius: 50%;
 }
 
 .daypart-icon svg {
   display: none !important;
 }
 
-/* Photo slots. Replace `none` with url(...) later if needed. */
-.dayparts > article:nth-child(1) .daypart-icon { background-image: none; }
-.dayparts > article:nth-child(2) .daypart-icon { background-image: none; }
-.dayparts > article:nth-child(3) .daypart-icon { background-image: none; }
-.dayparts > article:nth-child(4) .daypart-icon { background-image: none; }
+.dayparts > article:nth-child(1) .daypart-icon {
+  background-image: url("/AbramovGurme/dayparts/breakfast.png");
+}
+
+.dayparts > article:nth-child(2) .daypart-icon {
+  background-image: url("/AbramovGurme/dayparts/lunch.png");
+}
+
+.dayparts > article:nth-child(3) .daypart-icon {
+  background-image: url("/AbramovGurme/dayparts/dinner.png");
+}
+
+.dayparts > article:nth-child(4) .daypart-icon {
+  background-image: url("/AbramovGurme/dayparts/bar.png");
+}
