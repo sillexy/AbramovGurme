@@ -1,3 +1,28 @@
+.contact-dialog[open] {
+  animation: contact-dialog-fade-in 240ms cubic-bezier(.22, 1, .36, 1) both;
+}
+
+.contact-dialog[open]::backdrop {
+  animation: contact-dialog-backdrop-in 240ms ease both;
+}
+
+.contact-dialog[open] .contact-dialog__panel {
+  animation: contact-dialog-panel-in 240ms cubic-bezier(.22, 1, .36, 1) both;
+  transform-origin: center center;
+}
+
+.contact-dialog.contact-dialog--closing {
+  animation: contact-dialog-fade-out 220ms ease both;
+}
+
+.contact-dialog.contact-dialog--closing::backdrop {
+  animation: contact-dialog-backdrop-out 220ms ease both;
+}
+
+.contact-dialog.contact-dialog--closing .contact-dialog__panel {
+  animation: contact-dialog-panel-out 220ms cubic-bezier(.4, 0, 1, 1) both;
+}
+
 .contact-dialog__panel {
   position: relative;
   gap: 28px;
@@ -101,6 +126,48 @@
   color: var(--color-copper);
 }
 
+@keyframes contact-dialog-fade-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes contact-dialog-fade-out {
+  from { opacity: 1; }
+  to { opacity: 0; }
+}
+
+@keyframes contact-dialog-panel-in {
+  from {
+    opacity: 0;
+    transform: translateY(8px) scale(.98);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes contact-dialog-panel-out {
+  from {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+  to {
+    opacity: 0;
+    transform: translateY(8px) scale(.98);
+  }
+}
+
+@keyframes contact-dialog-backdrop-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes contact-dialog-backdrop-out {
+  from { opacity: 1; }
+  to { opacity: 0; }
+}
+
 @media (max-width: 640px) {
   .contact-dialog__contacts {
     grid-template-columns: 1fr;
@@ -118,5 +185,16 @@
 
   .contact-dialog__name {
     font-size: 1.75rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .contact-dialog[open],
+  .contact-dialog[open]::backdrop,
+  .contact-dialog[open] .contact-dialog__panel,
+  .contact-dialog.contact-dialog--closing,
+  .contact-dialog.contact-dialog--closing::backdrop,
+  .contact-dialog.contact-dialog--closing .contact-dialog__panel {
+    animation: none !important;
   }
 }
