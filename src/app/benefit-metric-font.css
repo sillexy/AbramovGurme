@@ -1,16 +1,17 @@
 .benefit-card__metric {
-  --benefit-prefix-size: 0.95rem;
-  --benefit-value-size: 2.2rem;
+  --benefit-metric-size: 1.85rem;
+  column-gap: 6px;
 }
 
-.benefit-card__metric > span {
+.benefit-card__metric > span,
+.benefit-card__metric > strong {
   font-family: var(--font-display), Georgia, serif;
-  font-size: var(--benefit-prefix-size);
+  font-size: var(--benefit-metric-size);
   font-weight: 500;
   line-height: 1;
+  white-space: nowrap;
 }
 
 .benefit-card__metric > strong {
-  font-size: var(--benefit-value-size);
-  line-height: 1;
+  padding-right: 8px;
 }
