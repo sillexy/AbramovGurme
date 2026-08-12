@@ -19,3 +19,9 @@
 .benefit-card__metric > strong {
   padding-right: 8px;
 }
+
+@media (max-width: 767px) {
+  .benefit-card__metric {
+    margin-top: 24px;
+  }
+}
