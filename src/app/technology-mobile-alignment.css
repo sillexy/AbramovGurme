@@ -12,4 +12,10 @@
   .technology-disclosure__requirement > span {
     transform: translateY(6px);
   }
+
+  /* Raise only the requirement copy so the visual bottom inset matches
+     the inset above the “Общее требование” label. */
+  .technology-disclosure__requirement p {
+    transform: translateY(-6px);
+  }
 }
