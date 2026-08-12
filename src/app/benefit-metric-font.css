@@ -1,0 +1,4 @@
+.benefit-card__metric > span {
+  font-family: var(--font-display), Georgia, serif;
+  font-weight: 500;
+}
