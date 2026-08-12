@@ -52,6 +52,13 @@ export function SiteHeader() {
     };
   }, [open]);
 
+  const openContactsFromMobileMenu = () => {
+    setOpen(false);
+    window.setTimeout(() => {
+      document.querySelector<HTMLButtonElement>(".site-header__actions .button--header")?.click();
+    }, 0);
+  };
+
   return (
     <header className={`site-header ${scrolled ? "site-header--scrolled" : ""} ${compact ? "site-header--compact" : ""}`} id="site-header">
       <div className="shell site-header__inner">
@@ -81,12 +88,12 @@ export function SiteHeader() {
         <div className="mobile-menu" id="mobile-menu" ref={menuRef} role="dialog" aria-modal="true" aria-label="Навигация">
           <button className="mobile-menu__backdrop" type="button" aria-label="Закрыть меню" onClick={() => setOpen(false)} />
           <div className="mobile-menu__panel">
-            <button className="mobile-menu__close" type="button" onClick={() => setOpen(false)}>Закрыть</button>
+            <button className="mobile-menu__close" type="button" aria-label="Закрыть меню" onClick={() => setOpen(false)}>×</button>
             <nav aria-label="Мобильная навигация">
               {navigation.map((item) => item.href
                 ? <a key={item.href} href={item.href} onClick={() => setOpen(false)}>{item.label}</a>
                 : <span className="nav-placeholder mobile-nav-placeholder" key={item.label}>{item.label}</span>)}
-              <ContactDialog className="mobile-menu__contact" />
+              <button className="mobile-menu__contact" type="button" onClick={openContactsFromMobileMenu}>Связаться</button>
             </nav>
           </div>
         </div>
