@@ -1,4 +1,16 @@
+.benefit-card__metric {
+  --benefit-prefix-size: 0.95rem;
+  --benefit-value-size: 2.2rem;
+}
+
 .benefit-card__metric > span {
   font-family: var(--font-display), Georgia, serif;
+  font-size: var(--benefit-prefix-size);
   font-weight: 500;
+  line-height: 1;
+}
+
+.benefit-card__metric > strong {
+  font-size: var(--benefit-value-size);
+  line-height: 1;
 }
