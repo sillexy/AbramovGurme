@@ -190,20 +190,20 @@
 
 .technology-disclosure > summary::after {
   position: absolute;
-  right: 16px;
-  display: grid;
-  width: 30px;
-  height: 30px;
-  place-items: center;
-  border-radius: 50%;
-  background: #d49b52;
-  color: #fff;
-  content: "⌃";
-  font-size: 1rem;
-  transform: none;
+  top: 50%;
+  right: 22px;
+  width: 10px;
+  height: 10px;
+  border-top: 2px solid #d49b52;
+  border-right: 2px solid #d49b52;
+  background: transparent;
+  content: "";
+  transform: translateY(-50%) rotate(135deg);
 }
 
-.technology-disclosure:not([open]) > summary::after { content: "⌄"; }
+.technology-disclosure:not([open]) > summary::after {
+  transform: translateY(-50%) rotate(45deg);
+}
 
 .technology-disclosure__content {
   overflow: clip;
