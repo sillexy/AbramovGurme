@@ -12,6 +12,10 @@
   white-space: nowrap;
 }
 
+.benefit-card__metric > span {
+  text-transform: lowercase;
+}
+
 .benefit-card__metric > strong {
   padding-right: 8px;
 }
