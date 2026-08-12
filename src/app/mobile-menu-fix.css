@@ -2,9 +2,10 @@
   .mobile-menu__panel {
     width: 100vw;
     max-width: none;
-    min-height: 0;
-    height: auto;
-    padding: 20px 18px 24px;
+    height: 100dvh;
+    min-height: 100dvh;
+    padding: 20px 18px max(24px, env(safe-area-inset-bottom));
+    overflow-y: auto;
   }
 
   .mobile-menu__close {
@@ -15,19 +16,18 @@
     margin-left: auto;
     place-items: center;
     padding: 0;
-    border: 1px solid rgba(185, 120, 69, .35);
-    border-radius: 50%;
+    border: 0;
+    border-radius: 0;
     background: transparent;
     color: var(--color-ink);
     font-family: Arial, sans-serif;
-    font-size: 1.75rem;
+    font-size: 1.9rem;
     font-weight: 300;
     line-height: 1;
     cursor: pointer;
   }
 
   .mobile-menu__close:hover {
-    border-color: var(--color-copper);
     color: var(--color-copper);
   }
 
@@ -37,6 +37,10 @@
     gap: 0;
   }
 
+  .mobile-menu nav a {
+    border-bottom: 0;
+  }
+
   .mobile-menu__contact {
     display: flex;
     width: 100%;
@@ -44,7 +48,6 @@
     align-items: center;
     padding: 12px 0;
     border: 0;
-    border-bottom: 1px solid var(--color-line);
     background: transparent;
     color: var(--color-ink);
     font-family: var(--font-display), serif;
