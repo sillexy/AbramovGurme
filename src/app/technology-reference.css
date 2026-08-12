@@ -135,25 +135,18 @@
   position: absolute;
   z-index: 2;
   top: 50%;
-  right: -30px;
-  width: 19px;
-  height: 19px;
-  border-top: 2px solid #d49b52;
-  border-right: 2px solid #d49b52;
+  right: -38px;
+  width: 34px;
+  height: 18px;
+  background: #d49b52;
+  clip-path: polygon(0 41%, 64% 41%, 64% 0, 100% 50%, 64% 100%, 64% 59%, 0 59%);
   content: "";
-  transform: translateY(-50%) rotate(45deg);
+  transform: translateY(-50%);
 }
 
 .technology-steps article:not(:last-child) > h3::before {
-  position: absolute;
-  z-index: 2;
-  top: 50%;
-  right: -28px;
-  width: 23px;
-  height: 2px;
-  background: #d49b52;
-  content: "";
-  transform: translateY(-50%);
+  display: none;
+  content: none;
 }
 
 .technology-disclosure {
