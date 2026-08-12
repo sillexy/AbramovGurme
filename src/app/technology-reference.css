@@ -135,11 +135,11 @@
   position: absolute;
   z-index: 2;
   top: 50%;
-  right: -38px;
-  width: 34px;
-  height: 18px;
+  right: -30px;
+  width: 24px;
+  height: 14px;
   background: #d49b52;
-  clip-path: polygon(0 41%, 64% 41%, 64% 0, 100% 50%, 64% 100%, 64% 59%, 0 59%);
+  clip-path: polygon(0 39%, 60% 39%, 60% 0, 100% 50%, 60% 100%, 60% 61%, 0 61%);
   content: "";
   transform: translateY(-50%);
 }
