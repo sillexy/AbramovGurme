@@ -1,6 +1,6 @@
 "use client";
 
-import { useRef } from "react";
+import { useEffect, useRef } from "react";
 
 import { contacts } from "@/content/site-content";
 
@@ -8,12 +8,49 @@ type ContactDialogProps = {
   className?: string;
 };
 
+const CONTACT_DIALOG_EXIT_MS = 220;
+
 export function ContactDialog({ className = "" }: ContactDialogProps) {
   const dialogRef = useRef<HTMLDialogElement>(null);
   const triggerRef = useRef<HTMLButtonElement>(null);
+  const closeTimerRef = useRef<number | null>(null);
 
-  const open = () => dialogRef.current?.showModal();
-  const close = () => dialogRef.current?.close();
+  useEffect(() => {
+    return () => {
+      if (closeTimerRef.current !== null) window.clearTimeout(closeTimerRef.current);
+    };
+  }, []);
+
+  const open = () => {
+    const dialog = dialogRef.current;
+    if (!dialog) return;
+
+    if (closeTimerRef.current !== null) {
+      window.clearTimeout(closeTimerRef.current);
+      closeTimerRef.current = null;
+    }
+
+    dialog.classList.remove("contact-dialog--closing");
+    dialog.showModal();
+  };
+
+  const close = () => {
+    const dialog = dialogRef.current;
+    if (!dialog?.open || dialog.classList.contains("contact-dialog--closing")) return;
+
+    const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    if (reduceMotion) {
+      dialog.close();
+      return;
+    }
+
+    dialog.classList.add("contact-dialog--closing");
+    closeTimerRef.current = window.setTimeout(() => {
+      dialog.classList.remove("contact-dialog--closing");
+      dialog.close();
+      closeTimerRef.current = null;
+    }, CONTACT_DIALOG_EXIT_MS);
+  };
 
   return (
     <>
@@ -34,7 +71,10 @@ export function ContactDialog({ className = "" }: ContactDialogProps) {
         onKeyDown={(event) => {
           if (event.key === "Escape") close();
         }}
-        onClose={() => triggerRef.current?.focus()}
+        onClose={() => {
+          dialogRef.current?.classList.remove("contact-dialog--closing");
+          triggerRef.current?.focus();
+        }}
       >
         <div className="contact-dialog__panel">
           <button className="contact-dialog__close" type="button" aria-label="Закрыть" onClick={close}>
