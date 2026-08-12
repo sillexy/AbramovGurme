@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Cormorant_Garamond, Manrope } from "next/font/google";
 
 import { BrandMatrixEnhancer } from "@/components/BrandMatrixEnhancer";
+import { HeroReferenceEnhancer } from "@/components/HeroReferenceEnhancer";
 import "./globals.css";
 import "./root-width.css";
 import "./about-layout.css";
@@ -18,6 +19,7 @@ import "./footer-contacts.css";
 import "./safety-reference.css";
 import "./micromarket-image.css";
 import "./technology-reference.css";
+import "./hero-reference.css";
 
 const display = Cormorant_Garamond({ subsets: ["cyrillic", "latin"], weight: ["500", "600"], variable: "--font-display" });
 const body = Manrope({ subsets: ["cyrillic", "latin"], weight: ["400", "500", "600", "700"], variable: "--font-body" });
@@ -34,7 +36,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
       <head>
         <link rel="stylesheet" href="./brand-matrix-assets.css" />
       </head>
-      <body><BrandMatrixEnhancer />{children}</body>
+      <body><BrandMatrixEnhancer /><HeroReferenceEnhancer />{children}</body>
     </html>
   );
 }
