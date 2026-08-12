@@ -1,0 +1,15 @@
+@media (max-width: 900px) {
+  /* Give every disclosure step the same top inset as the first one. */
+  .technology-disclosure__grid {
+    padding-top: 0;
+  }
+
+  .technology-disclosure__grid section {
+    padding-top: 18px;
+  }
+
+  /* Align the top edge of the info icon with the “Общее требование” label. */
+  .technology-disclosure__requirement > span {
+    transform: translateY(6px);
+  }
+}
