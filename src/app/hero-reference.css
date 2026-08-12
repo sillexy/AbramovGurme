@@ -33,10 +33,11 @@
 }
 
 .hero--reference h1 {
-  max-width: 670px;
-  font-size: clamp(4.1rem, 6.45vw, 7.1rem);
-  line-height: .84;
-  letter-spacing: -.045em;
+  max-width: none;
+  font-size: clamp(3.35rem, 5.15vw, 5.85rem);
+  line-height: .86;
+  letter-spacing: -.04em;
+  white-space: nowrap;
 }
 
 .hero--reference .hero__line {
@@ -239,7 +240,7 @@
   }
 
   .hero--reference h1 {
-    font-size: clamp(3.7rem, 6vw, 5.7rem);
+    font-size: clamp(3.1rem, 4.9vw, 4.75rem);
   }
 
   .hero__stats {
@@ -257,7 +258,8 @@
   }
 
   .hero--reference h1 {
-    max-width: 760px;
+    max-width: none;
+    font-size: clamp(3rem, 7.2vw, 4.4rem);
   }
 
   .hero--reference .hero__visual {
@@ -277,7 +279,8 @@
   }
 
   .hero--reference h1 {
-    font-size: clamp(3rem, 14vw, 4.5rem);
+    font-size: clamp(2.25rem, 10.3vw, 3.55rem);
+    line-height: .9;
   }
 
   .hero__stats {
