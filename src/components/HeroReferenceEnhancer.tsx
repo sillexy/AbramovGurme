@@ -99,7 +99,7 @@ export function HeroReferenceEnhancer() {
               <div className="hero__safety-icon"><ShieldIcon /></div>
               <div className="hero__safety-copy">
                 <strong>Безопасно. Натурально. В стекле.</strong>
-                <div><span>Срок хранения<br />до 1 года</span><span>Сделано в России</span></div>
+                <div><span>Срок хранения<br className="hero__shelf-life-break" />до 1 года</span><span>Сделано в России</span></div>
               </div>
             </div>,
             visual,
