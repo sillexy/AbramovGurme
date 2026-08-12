@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Cormorant_Garamond, Manrope } from "next/font/google";
 
 import { BrandMatrixEnhancer } from "@/components/BrandMatrixEnhancer";
+import { FooterContactsEnhancer } from "@/components/FooterContactsEnhancer";
 import { HeroReferenceEnhancer } from "@/components/HeroReferenceEnhancer";
 import "./globals.css";
 import "./root-width.css";
@@ -36,7 +37,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
       <head>
         <link rel="stylesheet" href="./brand-matrix-assets.css" />
       </head>
-      <body><BrandMatrixEnhancer /><HeroReferenceEnhancer />{children}</body>
+      <body><BrandMatrixEnhancer /><HeroReferenceEnhancer /><FooterContactsEnhancer />{children}</body>
     </html>
   );
 }
