@@ -1,0 +1,17 @@
+.daypart-icon {
+  overflow: hidden;
+  background-color: #fff;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+.daypart-icon svg {
+  display: none !important;
+}
+
+/* Photo slots. Replace `none` with url(...) later if needed. */
+.dayparts > article:nth-child(1) .daypart-icon { background-image: none; }
+.dayparts > article:nth-child(2) .daypart-icon { background-image: none; }
+.dayparts > article:nth-child(3) .daypart-icon { background-image: none; }
+.dayparts > article:nth-child(4) .daypart-icon { background-image: none; }
