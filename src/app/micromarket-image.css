@@ -180,14 +180,17 @@
 
 @media (max-width: 1023px) {
   .micromarket .split-grid {
-    grid-template-columns: 1fr;
+    grid-template-columns: minmax(0, 1fr);
   }
 
   .micromarket .section-copy {
+    min-width: 0;
     max-width: none;
   }
 
   .micromarket #micromarket-title {
+    width: 100%;
+    min-width: 0;
     max-width: 680px;
   }
 
@@ -200,7 +203,10 @@
 
 @media (max-width: 640px) {
   .micromarket #micromarket-title {
-    font-size: clamp(2.7rem, 13vw, 4rem);
+    max-width: 100%;
+    font-size: clamp(2rem, 9.2vw, 2.8rem);
+    overflow-wrap: anywhere;
+    hyphens: auto;
   }
 
   .micromarket .micromarket-list article {
