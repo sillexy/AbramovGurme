@@ -7,6 +7,27 @@
   margin-top: 0;
 }
 
+@media (max-width: 767px) {
+  /* Keep the philosophy image tight to its artwork on mobile instead of
+     reserving the old 420px frame, which created large blank bands. */
+  .about .split-grid {
+    gap: 24px;
+  }
+
+  .about .editorial-image {
+    width: 100%;
+    height: auto;
+    min-height: 0;
+    aspect-ratio: 3 / 2;
+    align-self: start;
+  }
+
+  .about .editorial-image img {
+    object-fit: contain;
+    object-position: center top;
+  }
+}
+
 /* Desktop philosophy layout: let the heading define the left-column width. */
 @media (min-width: 1024px) {
   .about .split-grid {
