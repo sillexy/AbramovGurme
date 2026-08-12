@@ -31,14 +31,14 @@ export const contacts: readonly ContactPerson[] = [
   {
     role: "Генеральный директор",
     name: "Артур Аслаев",
-    phone: "+7 (926) 540-20-96",
-    phoneHref: "tel:+79265402096",
+    phone: "+7 (999) 999-99-99",
+    phoneHref: "tel:+79999999999",
   },
   {
     role: "Исполнитель",
     name: "Ирина Фалева",
-    phone: "+7 (999) 514-62-98",
-    phoneHref: "tel:+79995146298",
+    phone: "+7 (999) 999-99-99",
+    phoneHref: "tel:+79999999999",
   },
 ] as const;
 
