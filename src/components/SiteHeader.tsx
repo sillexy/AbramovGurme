@@ -86,6 +86,7 @@ export function SiteHeader() {
               {navigation.map((item) => item.href
                 ? <a key={item.href} href={item.href} onClick={() => setOpen(false)}>{item.label}</a>
                 : <span className="nav-placeholder mobile-nav-placeholder" key={item.label}>{item.label}</span>)}
+              <ContactDialog className="mobile-menu__contact" />
             </nav>
           </div>
         </div>
