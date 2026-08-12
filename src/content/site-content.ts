@@ -17,6 +17,8 @@ export type ContactPerson = {
   name: string;
   phone: string;
   phoneHref: string;
+  email: string;
+  emailHref: string;
 };
 
 export const navigation: readonly NavigationItem[] = [
@@ -33,12 +35,16 @@ export const contacts: readonly ContactPerson[] = [
     name: "Артур Аслаев",
     phone: "+7 (999) 999-99-99",
     phoneHref: "tel:+79999999999",
+    email: "example@gmail.com",
+    emailHref: "mailto:example@gmail.com",
   },
   {
     role: "Исполнитель",
     name: "Ирина Фалева",
     phone: "+7 (999) 999-99-99",
     phoneHref: "tel:+79999999999",
+    email: "example@gmail.com",
+    emailHref: "mailto:example@gmail.com",
   },
 ] as const;
 
@@ -47,8 +53,8 @@ export const contact = {
   name: contacts[0].name,
   phone: contacts[0].phone,
   phoneHref: contacts[0].phoneHref,
-  email: contacts[1].phone,
-  emailHref: contacts[1].phoneHref,
+  email: contacts[0].email,
+  emailHref: contacts[0].emailHref,
 } as const;
 
 export const directions: Direction[] = [
