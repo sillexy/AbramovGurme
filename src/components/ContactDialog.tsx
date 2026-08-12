@@ -47,10 +47,11 @@ export function ContactDialog({ className = "" }: ContactDialogProps) {
 
           <div className="contact-dialog__contacts">
             {contacts.map((person) => (
-              <section className="contact-dialog__person" key={person.phoneHref}>
+              <section className="contact-dialog__person" key={person.name}>
                 <span className="contact-dialog__role">{person.role}</span>
                 <strong className="contact-dialog__name">{person.name}</strong>
                 <a className="contact-dialog__phone" href={person.phoneHref}>{person.phone}</a>
+                <a className="contact-dialog__email" href={person.emailHref}>{person.email}</a>
               </section>
             ))}
           </div>
