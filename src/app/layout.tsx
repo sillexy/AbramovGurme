@@ -20,6 +20,7 @@ import "./footer-contacts.css";
 import "./safety-reference.css";
 import "./micromarket-image.css";
 import "./technology-reference.css";
+import "./technology-mobile-alignment.css";
 import "./hero-reference.css";
 import "./benefit-metric-font.css";
 import "./benefits-mobile-note.css";
