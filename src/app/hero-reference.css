@@ -184,8 +184,8 @@
   width: min(78%, 535px);
   min-height: 86px;
   padding: 15px 20px;
-  grid-template-columns: 50px minmax(0, auto) 50px;
-  gap: 14px;
+  grid-template-columns: 46px max-content;
+  gap: 16px;
   align-items: center;
   justify-content: center;
   border: 1px solid rgba(212,155,82,.3);
@@ -197,17 +197,14 @@
 }
 
 .hero__safety-card::after {
-  width: 50px;
-  height: 1px;
-  grid-column: 3;
-  content: "";
+  display: none;
+  content: none;
 }
 
 .hero__safety-icon {
   display: grid;
   width: 46px;
   height: 46px;
-  grid-column: 1;
   place-items: center;
   color: var(--hero-gold);
 }
@@ -223,9 +220,8 @@
 }
 
 .hero__safety-copy {
-  grid-column: 2;
-  justify-self: center;
-  text-align: center;
+  justify-self: start;
+  text-align: left;
 }
 
 .hero__safety-copy strong {
@@ -238,7 +234,7 @@
 .hero__safety-copy > div {
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;
+  justify-content: flex-start;
   gap: 0;
   margin-top: 7px;
   color: #ded7ce;
@@ -337,12 +333,8 @@
   .hero__safety-card {
     min-height: 78px;
     padding: 12px 14px;
-    grid-template-columns: 42px minmax(0, auto) 42px;
-    gap: 10px;
-  }
-
-  .hero__safety-card::after {
-    width: 42px;
+    grid-template-columns: 38px minmax(0, max-content);
+    gap: 12px;
   }
 
   .hero__safety-icon,
