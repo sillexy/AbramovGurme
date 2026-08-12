@@ -24,16 +24,17 @@
 }
 
 .site-footer .footer-contact__layout {
-  display: grid;
+  display: flex;
   width: 100%;
-  grid-template-columns: minmax(0, 560px) minmax(300px, 1fr);
-  column-gap: clamp(48px, 8vw, 120px);
-  align-items: start;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: clamp(48px, 8vw, 120px);
 }
 
 .site-footer .footer-contact__people {
   display: grid;
-  width: 100%;
+  width: min(100%, 560px);
+  flex: 0 1 560px;
   grid-template-columns: repeat(2, minmax(0, 1fr));
   column-gap: clamp(36px, 5vw, 64px);
   align-items: start;
@@ -91,8 +92,11 @@
   display: grid;
   min-width: 0;
   max-width: 440px;
-  justify-self: end;
+  margin-left: auto;
+  flex: 0 1 440px;
   gap: 6px;
+  align-content: start;
+  justify-items: start;
   text-align: left;
 }
 
@@ -108,20 +112,23 @@
 
 @media (max-width: 900px) {
   .site-footer .footer-contact__layout {
-    grid-template-columns: 1fr;
-    row-gap: 28px;
+    flex-direction: column;
+    gap: 28px;
+  }
+
+  .site-footer .footer-contact__people,
+  .site-footer .footer-contact__regional {
+    width: 100%;
+    max-width: none;
+    flex-basis: auto;
   }
 
   .site-footer .footer-contact__regional {
-    justify-self: start;
+    margin-left: 0;
   }
 }
 
 @media (max-width: 640px) {
-  .site-footer .footer-contact {
-    width: 100%;
-  }
-
   .site-footer .footer-contact__people {
     grid-template-columns: 1fr;
     row-gap: 22px;
