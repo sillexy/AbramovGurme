@@ -65,9 +65,9 @@ export function FooterContactsEnhancer() {
       <section className="footer-contact__regional" aria-label="Представители Иркутской области и ДВФО">
         <span className="footer-contact__regional-title">Представители Иркутской области и ДВФО</span>
         <p className="footer-contact__regional-row"><LocationIcon /><span>664075 г. Иркутск, ул. Байкальская, д. 244/5</span></p>
-        <a className="footer-contact__regional-row" href="tel:+73952999212"><PhoneIcon /><span>+7 3952 999 212</span></a>
-        <a className="footer-contact__regional-row" href="tel:+79149296272"><PhoneIcon /><span>+7 914 929 62 72</span></a>
-        <a className="footer-contact__regional-row" href="tel:+79643565254"><PhoneIcon /><span>+7 964 356 52 54</span></a>
+        <a className="footer-contact__regional-row" href="tel:+73952999212"><PhoneIcon /><span>+7 (3952) 99-92-12</span></a>
+        <a className="footer-contact__regional-row" href="tel:+79149296272"><PhoneIcon /><span>+7 (914) 929-62-72</span></a>
+        <a className="footer-contact__regional-row" href="tel:+79643565254"><PhoneIcon /><span>+7 (964) 356-52-54</span></a>
         <a className="footer-contact__regional-row" href="mailto:office@pkberkut.ru"><MailIcon /><span>office@pkberkut.ru</span></a>
       </section>
     </div>,
