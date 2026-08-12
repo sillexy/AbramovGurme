@@ -52,7 +52,7 @@ export function HeroReferenceEnhancer() {
     const title = hero?.querySelector<HTMLElement>("#hero-title") ?? null;
 
     hero?.classList.add("hero--reference");
-    if (title) title.innerHTML = "Технологии<br />будущего<br />в готовой еде";
+    if (title) title.innerHTML = "Технологии будущего<br />в готовой еде";
 
     setCopy(heroCopy);
     setVisual(heroVisual);
