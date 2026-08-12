@@ -247,6 +247,10 @@
   border-left: 1px solid rgba(212,155,82,.5);
 }
 
+.hero__shelf-life-break {
+  display: none;
+}
+
 @media (max-width: 1100px) {
   .hero--reference .hero__grid {
     grid-template-columns: minmax(0, 1fr) minmax(400px, .95fr);
@@ -390,5 +394,9 @@
     margin-left: 0;
     padding-left: 8px;
     border-left: 1px solid rgba(212,155,82,.5);
+  }
+
+  .hero__shelf-life-break {
+    display: initial;
   }
 }
