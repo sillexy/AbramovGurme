@@ -60,6 +60,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
   return (
     <html lang="ru" className={`${display.variable} ${body.variable}`}>
       <head>
+        <link rel="icon" type="image/png" href="./favicon.png" />
         <link rel="stylesheet" href="./brand-matrix-assets.css" />
         <script dangerouslySetInnerHTML={{ __html: heroPrepaintScript }} />
       </head>
