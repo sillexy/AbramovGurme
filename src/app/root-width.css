@@ -28,7 +28,6 @@ body > #top,
   line-height: 1.52;
 }
 
-/* Placeholder navigation item for the future dealers section. */
 .desktop-nav .nav-placeholder {
   display: inline-flex;
   align-items: center;
@@ -48,12 +47,10 @@ body > #top,
   cursor: default;
 }
 
-/* Match detailed offer blocks to the warm ivory background used by the ecosystem section. */
 .offers {
   background: var(--color-ivory);
 }
 
-/* Philosophy cards: match the illustrated reference while keeping the current first two texts. */
 .about .split-grid {
   align-items: center;
 }
@@ -206,13 +203,11 @@ body > #top,
   }
 }
 
-/* Three-jars card: match the vertical inset of the four daypart cards above. */
 .three-jars {
   min-height: 0;
   padding-block: 27px 24px;
 }
 
-/* Use a geometric lining numeral so the glyph sits naturally in the vertical center. */
 .three-jars__number {
   display: flex;
   height: 100%;
@@ -233,13 +228,8 @@ body > #top,
 }
 
 @media (max-width: 767px) {
-  .about .section-copy {
-    max-width: none;
-  }
-
-  .about .editorial-image {
-    min-height: 420px;
-  }
+  .about .section-copy { max-width: none; }
+  .about .editorial-image { min-height: 420px; }
 
   .about .outlined-copy,
   .about .serif-note {
@@ -257,9 +247,7 @@ body > #top,
   }
 
   .about .outlined-copy h3,
-  .about .serif-note {
-    font-size: 0.98rem;
-  }
+  .about .serif-note { font-size: 0.98rem; }
 
   .about .outlined-copy p,
   .about .serif-note::after {
@@ -267,9 +255,7 @@ body > #top,
     line-height: 1.46;
   }
 
-  .ecosystem-grid {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
+  .ecosystem-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 
   .ecosystem-grid > article {
     min-width: 0;
@@ -283,5 +269,138 @@ body > #top,
     font-size: clamp(1.2rem, 15cqw, 2rem);
     line-height: 0.96;
     letter-spacing: -0.02em;
+  }
+}
+
+/* Header logo. */
+.site-header .brand {
+  width: auto;
+  height: 40px;
+  flex: 0 0 auto;
+}
+
+.site-header .brand__art {
+  display: block;
+  width: auto;
+  height: 40px;
+  max-width: none;
+  object-fit: contain;
+  filter: brightness(0) saturate(100%) invert(82.928%) sepia(10.671%) saturate(6425.1%) hue-rotate(320.957deg) brightness(75.584%) contrast(88.136%);
+}
+
+/* Benefit metric typography. */
+.benefit-card__metric {
+  --benefit-metric-size: 1.85rem;
+  column-gap: 6px;
+}
+
+.benefit-card__metric > span,
+.benefit-card__metric > strong {
+  font-family: var(--font-display), Georgia, serif;
+  font-size: var(--benefit-metric-size);
+  font-weight: 500;
+  line-height: 1;
+  white-space: nowrap;
+}
+
+.benefit-card__metric > span { text-transform: lowercase; }
+.benefit-card__metric > strong { padding-right: 8px; }
+
+@media (max-width: 767px) {
+  .benefit-card > p + .benefit-card__metric {
+    margin-top: 26px !important;
+  }
+}
+
+/* Mobile benefits note. */
+@media (max-width: 767px) {
+  .benefits__note {
+    font-size: 0;
+    line-height: 1.35;
+  }
+
+  .benefits__note br { display: none; }
+
+  .benefits__note::after {
+    display: block;
+    color: var(--color-copper);
+    font-family: var(--font-display), Georgia, serif;
+    font-size: clamp(1rem, 4.5vw, 1.08rem);
+    font-weight: 500;
+    line-height: 1.35;
+    text-align: center;
+    white-space: pre-line;
+    content: "Чистые рецептуры,\Aсовременные технологии и стекло -\Aдля безупречного вкуса\Aи пользы каждый день";
+  }
+}
+
+/* Full-width mobile navigation. */
+@media (max-width: 767px) {
+  .mobile-menu__panel {
+    width: 100vw;
+    max-width: none;
+    height: 100dvh;
+    min-height: 100dvh;
+    padding: 20px 18px max(24px, env(safe-area-inset-bottom));
+    overflow-y: auto;
+  }
+
+  .mobile-menu__close {
+    display: grid;
+    width: 40px;
+    height: 40px;
+    min-height: 0;
+    margin-left: auto;
+    place-items: center;
+    padding: 0;
+    border: 0;
+    border-radius: 0;
+    background: transparent;
+    color: var(--color-ink);
+    font-family: Arial, sans-serif;
+    font-size: 1.9rem;
+    font-weight: 300;
+    line-height: 1;
+    cursor: pointer;
+  }
+
+  .mobile-menu__close:hover { color: var(--color-copper); }
+
+  .mobile-menu nav {
+    width: 100%;
+    margin-top: 6px;
+    gap: 0;
+  }
+
+  .mobile-menu nav a,
+  .mobile-nav-placeholder,
+  .mobile-menu__contact {
+    border-bottom: 0 !important;
+  }
+
+  .mobile-menu__contact {
+    display: flex;
+    width: 100%;
+    min-height: 56px;
+    align-items: center;
+    padding: 12px 0;
+    border: 0;
+    background: transparent;
+    color: var(--color-ink);
+    font-family: var(--font-display), serif;
+    font-size: clamp(1.6rem, 6vw, 2.3rem);
+    font-weight: 500;
+    line-height: .96;
+    text-align: left;
+    cursor: pointer;
+  }
+}
+
+/* Last business card must fill a single-column mobile grid. */
+@media (max-width: 767px) {
+  .business-card:last-child {
+    grid-column: auto;
+    justify-self: stretch;
+    width: 100%;
   }
 }
