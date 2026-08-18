@@ -1,5 +1,5 @@
-.flagship-band::before { background-image: url('./images/brand-matrix/flagship.png'); }
-.ecosystem-grid article:nth-child(1)::before { background-image: url('./images/brand-matrix/a1-lunch.png'); }
-.ecosystem-grid article:nth-child(2)::before { background-image: url('./images/brand-matrix/a2-fitness.png'); }
-.ecosystem-grid article:nth-child(3)::before { background-image: url('./images/brand-matrix/a3-bars.png'); }
-.ecosystem-grid article:nth-child(4)::before { background-image: url('./images/brand-matrix/a4-desserts.png'); }
+.flagship-band::before { background-image: url('./brand-matrix/flagship.webp'); }
+.ecosystem-grid article:nth-child(1)::before { background-image: url('./brand-matrix/a1-lunch.webp'); }
+.ecosystem-grid article:nth-child(2)::before { background-image: url('./brand-matrix/a2-fitness.webp'); }
+.ecosystem-grid article:nth-child(3)::before { background-image: url('./brand-matrix/a3-bars.webp'); }
+.ecosystem-grid article:nth-child(4)::before { background-image: url('./brand-matrix/a4-desserts.webp'); }
