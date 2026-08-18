@@ -191,9 +191,15 @@
   border-right: 2px solid #d49b52;
   background: transparent;
   content: "";
+  transform: translateY(-50%) rotate(45deg);
+  transition: transform 320ms cubic-bezier(.22,1,.36,1);
+}
+
+.technology-disclosure[open]:not(.is-closing) > summary::after {
   transform: translateY(-50%) rotate(135deg);
 }
 
+.technology-disclosure.is-closing > summary::after,
 .technology-disclosure:not([open]) > summary::after {
   transform: translateY(-50%) rotate(45deg);
 }
