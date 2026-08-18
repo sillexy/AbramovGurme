@@ -329,9 +329,11 @@
 
   .technology-disclosure__grid {
     grid-template-columns: 1fr;
+    padding-top: 0;
   }
 
   .technology-disclosure__grid section {
+    padding-top: 18px;
     border-right: 0;
     border-bottom: 1px solid rgba(212, 155, 82, .18);
   }
@@ -344,7 +346,8 @@
 
   .technology-disclosure__requirement::before { display: none; }
   .technology-disclosure__requirement strong { grid-column: 2; }
-  .technology-disclosure__requirement p { grid-column: 2; grid-row: 2; }
+  .technology-disclosure__requirement p { grid-column: 2; grid-row: 2; transform: translateY(-6px); }
+  .technology-disclosure__requirement > span { transform: translateY(6px); }
 }
 
 @media (max-width: 640px) {
