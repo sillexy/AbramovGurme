@@ -71,7 +71,7 @@ export function HeroReferenceEnhancer() {
               </div>
               <div className="hero-stat">
                 <StatIcon type="book" />
-                <strong>50+</strong>
+                <strong>400+</strong>
                 <span>рецептов<small>на любой вкус</small></span>
               </div>
               <div className="hero-stat">
