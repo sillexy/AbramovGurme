@@ -28,6 +28,7 @@ import "./benefits-mobile-note.css";
 import "./mobile-menu-fix.css";
 import "./popup-close-final.css";
 import "./daypart-photo-slots.css";
+import "./business-mobile-fix.css";
 
 const display = Cormorant_Garamond({ subsets: ["cyrillic", "latin"], weight: ["500", "600"], variable: "--font-display" });
 const body = Manrope({ subsets: ["cyrillic", "latin"], weight: ["400", "500", "600", "700"], variable: "--font-body" });
