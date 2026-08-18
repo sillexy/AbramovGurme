@@ -1,0 +1,7 @@
+@media (max-width: 767px) {
+  .business-card:last-child {
+    grid-column: auto;
+    justify-self: stretch;
+    width: 100%;
+  }
+}
