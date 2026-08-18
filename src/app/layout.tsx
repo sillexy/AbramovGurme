@@ -3,7 +3,6 @@ import { Cormorant_Garamond, Manrope } from "next/font/google";
 
 import { BrandMatrixEnhancer } from "@/components/BrandMatrixEnhancer";
 import { FooterContactsEnhancer } from "@/components/FooterContactsEnhancer";
-import { HeroReferenceEnhancer } from "@/components/HeroReferenceEnhancer";
 import "./globals.css";
 import "./root-width.css";
 import "./about-layout.css";
@@ -26,33 +25,14 @@ export const metadata: Metadata = {
   robots: { index: false, follow: false },
 };
 
-const heroPrepaintScript = `
-(() => {
-  const applyHeroClass = () => {
-    const hero = document.querySelector('.hero');
-    if (!hero) return false;
-    hero.classList.add('hero--reference');
-    return true;
-  };
-
-  if (!applyHeroClass()) {
-    const observer = new MutationObserver(() => {
-      if (applyHeroClass()) observer.disconnect();
-    });
-    observer.observe(document.documentElement, { childList: true, subtree: true });
-  }
-})();
-`;
-
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   return (
     <html lang="ru" className={`${display.variable} ${body.variable}`}>
       <head>
         <link rel="icon" type="image/png" href="./favicon.png" />
         <link rel="stylesheet" href="./brand-matrix-assets.css" />
-        <script dangerouslySetInnerHTML={{ __html: heroPrepaintScript }} />
       </head>
-      <body><BrandMatrixEnhancer /><HeroReferenceEnhancer /><FooterContactsEnhancer />{children}</body>
+      <body><BrandMatrixEnhancer /><FooterContactsEnhancer />{children}</body>
     </html>
   );
 }
