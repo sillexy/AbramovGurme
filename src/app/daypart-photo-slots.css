@@ -12,17 +12,17 @@
 }
 
 .dayparts > article:nth-child(1) .daypart-icon {
-  background-image: url("/AbramovGurme/dayparts/breakfast.png");
+  background-image: url("/AbramovGurme/dayparts/breakfast.webp");
 }
 
 .dayparts > article:nth-child(2) .daypart-icon {
-  background-image: url("/AbramovGurme/dayparts/lunch.png");
+  background-image: url("/AbramovGurme/dayparts/lunch.webp");
 }
 
 .dayparts > article:nth-child(3) .daypart-icon {
-  background-image: url("/AbramovGurme/dayparts/dinner.png");
+  background-image: url("/AbramovGurme/dayparts/dinner.webp");
 }
 
 .dayparts > article:nth-child(4) .daypart-icon {
-  background-image: url("/AbramovGurme/dayparts/bar.png");
+  background-image: url("/AbramovGurme/dayparts/bar.webp");
 }
