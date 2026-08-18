@@ -13,7 +13,7 @@ const offerContent = {
   a3: ["Меню за 1 минуту|Быстрый разогрев и подача непосредственно в стекле — без ожидания и полноценной кухни.", "Стабильность качества|Стандартизированные рецептуры снижают вариативность результата и количество ручных операций.", "Повышение маржинальности|Тезисы бренда об обороте, затратах, среднем чеке и скорости обслуживания — без собственных цифр или расчетов."],
 } as const;
 
-const imageForOffer = { flagship: "/source/page-09.png", a1: "/source/page-10.png", a2: "/source/page-11.png", a3: "/source/page-12.png" } as const;
+const imageForOffer = { flagship: "/source/page-09.webp", a1: "/source/page-10.webp", a2: "/source/page-11.webp", a3: "/source/page-12.webp" } as const;
 
 const benefitMetrics = [
   ["До", "30%", "меньше вредных соединений"],
@@ -59,7 +59,7 @@ export default function Home() {
               <p className="hero__description">Инновационная платформа полезного питания в стекле: готовые блюда, продуктовые направления и решения для бизнеса.</p>
               <div className="button-row"><a className="button button--copper" href="#offers">Выбрать направление</a><ContactDialog className="button button--light" /></div>
             </div>
-            <div className="hero__visual"><SourceImage src="/products/hero-jar-v2.png" alt="Банка с готовым блюдом в стекле" className="hero__image" priority /></div>
+            <div className="hero__visual"><SourceImage src="/products/hero-jar-v2.webp" alt="Банка с готовым блюдом в стекле" className="hero__image" priority /></div>
           </div>
         </section>
 
@@ -71,7 +71,7 @@ export default function Home() {
               <article className="outlined-copy"><h3>Абсолютная открытость</h3><p>Стекло позволяет оценить структуру, свежесть и эстетику блюда еще до того как вы открыли блюдо. Гарантия доверия.</p></article>
               <p className="serif-note">Премиальная экоупаковка</p>
             </div>
-            <SourceImage src="/source/page-02-user.png" alt="Готовое блюдо в прозрачной стеклянной банке" className="editorial-image source-image--right" />
+            <SourceImage src="/source/page-02-user.webp" alt="Готовое блюдо в прозрачной стеклянной банке" className="editorial-image source-image--right" />
           </Reveal>
         </section>
 
@@ -115,7 +115,7 @@ direction.id === "a3"
 
         <section id="business" className="section business" aria-labelledby="business-title"><Reveal className="shell"><p className="eyebrow">B2B-партнерство и дистрибуция</p><h2 id="business-title">Партнёрство без риска</h2><div className="business-grid">{businessCards.map(({ title, text, metric, cta }, index) => <article className="business-card" key={title}><BusinessIcon index={index} /><h3>{title}</h3><span className="business-card__divider" aria-hidden="true" /><p>{text}</p>{metric ? <strong className="business-card__metric">{metric}</strong> : null}<span className="business-card__cta"><BusinessTagIcon index={index} />{cta}</span></article>)}</div></Reveal></section>
 
-        <section id="micromarket" className="section micromarket" aria-labelledby="micromarket-title"><Reveal className="shell split-grid"><div className="section-copy"><p className="eyebrow">Коммерческая архитектура</p><h2 id="micromarket-title">Высокоэффективная розничная модель на 1 кв. метре</h2><div className="micromarket-list"><article><h3>Минимум площади — максимум маржи</h3><p>Заявленная брендом модель умного автоматизированного самообслуживания занимает до <strong>1,2 м²</strong>.</p></article><article><h3>Отсутствие инфраструктурных барьеров</h3><p>Не требуется вытяжка, подключение воды, сложные инженерные согласования или капитальное строительство. <strong>Нужна только электрическая розетка.</strong></p></article><article><h3>Запуск сети за 24 часа</h3><p>Исходное заявление бренда о монтаже, подключении к цифровой экосистеме, быстром выходе на окупаемость и минимальном пороге стартовых инвестиций.</p></article><p className="micromarket-load">До 420 порций на один холодильник микромаркета</p></div></div><SourceImage src="/source/page-14.png" alt="Автономный микромаркет Абрамов Гурме" className="editorial-image source-image--right" /></Reveal></section>
+        <section id="micromarket" className="section micromarket" aria-labelledby="micromarket-title"><Reveal className="shell split-grid"><div className="section-copy"><p className="eyebrow">Коммерческая архитектура</p><h2 id="micromarket-title">Высокоэффективная розничная модель на 1 кв. метре</h2><div className="micromarket-list"><article><h3>Минимум площади — максимум маржи</h3><p>Заявленная брендом модель умного автоматизированного самообслуживания занимает до <strong>1,2 м²</strong>.</p></article><article><h3>Отсутствие инфраструктурных барьеров</h3><p>Не требуется вытяжка, подключение воды, сложные инженерные согласования или капитальное строительство. <strong>Нужна только электрическая розетка.</strong></p></article><article><h3>Запуск сети за 24 часа</h3><p>Исходное заявление бренда о монтаже, подключении к цифровой экосистеме, быстром выходе на окупаемость и минимальном пороге стартовых инвестиций.</p></article><p className="micromarket-load">До 420 порций на один холодильник микромаркета</p></div></div><SourceImage src="/source/page-14.webp" alt="Автономный микромаркет Абрамов Гурме" className="editorial-image source-image--right" /></Reveal></section>
 
       </main>
       <footer className="site-footer"><div className="shell site-footer__grid"><div className="footer-contact"><p><svg aria-hidden="true" viewBox="0 0 24 24"><path d="M20 21a8 8 0 0 0-16 0M12 13a5 5 0 1 0 0-10 5 5 0 0 0 0 10Z" /></svg>{contact.name}</p><a href={contact.phoneHref}><svg aria-hidden="true" viewBox="0 0 24 24"><path d="M5 4h3l2 5-2 1.5a14 14 0 0 0 5.5 5.5L15 14l5 2v3c0 1.1-.9 2-2 2C10.3 21 3 13.7 3 6c0-1.1.9-2 2-2Z" /></svg>{contact.phone}</a><a href={contact.emailHref}><svg aria-hidden="true" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2" /><path d="m4 7 8 6 8-6" /></svg>{contact.email}</a></div><p className="copyright">© {new Date().getFullYear()} Абрамов Гурме</p></div></footer>
@@ -154,7 +154,7 @@ function BusinessTagIcon({ index }: { index: number }) {
 }
 
 function DessertOffer({ direction }: { direction: (typeof directions)[number] }) {
-  return <Reveal className="offer offer--dessert"><div className="offer__copy" id="a4"><p className="eyebrow">Направление 05</p><h2>{direction.label}</h2><h3>{direction.title}</h3><p className="dessert-intro">Воздушное суфле, ягодно-фруктовый мусс-пудинг, «Наполеон», «Медовик», брауни, тирамису, панна-котта и прозрачное ягодное желе.</p><p>Стекло сохраняет геометрию, воздушную текстуру, свежесть и аромат без химических стабилизаторов.</p><p className="price">{direction.price}</p></div><SourceImage src="/products/dessert-jar.png" alt="Слоёный десерт в стеклянной банке" className="dessert-art" /></Reveal>;
+  return <Reveal className="offer offer--dessert"><div className="offer__copy" id="a4"><p className="eyebrow">Направление 05</p><h2>{direction.label}</h2><h3>{direction.title}</h3><p className="dessert-intro">Воздушное суфле, ягодно-фруктовый мусс-пудинг, «Наполеон», «Медовик», брауни, тирамису, панна-котта и прозрачное ягодное желе.</p><p>Стекло сохраняет геометрию, воздушную текстуру, свежесть и аромат без химических стабилизаторов.</p><p className="price">{direction.price}</p></div><SourceImage src="/products/dessert-jar.webp" alt="Слоёный десерт в стеклянной банке" className="dessert-art" /></Reveal>;
 }
 
 function MenuCycle() {
