@@ -37,7 +37,19 @@ export function BrandMatrixEnhancer() {
       link.className = "ecosystem-cta";
       link.href = targets[index] ?? "#offers";
       link.setAttribute("aria-label", labels[index] ?? "Перейти к направлению");
-      link.textContent = "→";
+
+      const svg = document.createElementNS("http://www.w3.org/2000/svg", "svg");
+      svg.setAttribute("viewBox", "0 0 24 24");
+      svg.setAttribute("aria-hidden", "true");
+
+      const line = document.createElementNS("http://www.w3.org/2000/svg", "path");
+      line.setAttribute("d", "M5 12h14");
+
+      const arrow = document.createElementNS("http://www.w3.org/2000/svg", "path");
+      arrow.setAttribute("d", "m14 7 5 5-5 5");
+
+      svg.append(line, arrow);
+      link.appendChild(svg);
       node.appendChild(link);
     });
   }, []);
