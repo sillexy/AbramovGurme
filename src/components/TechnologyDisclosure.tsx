@@ -17,6 +17,7 @@ const disclosureScript = String.raw`(() => {
     content.style.height = "";
     content.style.opacity = "";
     content.style.overflow = "";
+    content.style.paddingBottom = "";
   };
 
   summary.addEventListener("click", (event) => {
@@ -29,18 +30,33 @@ const disclosureScript = String.raw`(() => {
       return;
     }
 
+    const computed = getComputedStyle(content);
     const currentHeight = details.open ? content.getBoundingClientRect().height : 0;
-    const currentOpacity = currentHeight > 0 ? Number.parseFloat(getComputedStyle(content).opacity) || 1 : 0;
+    const currentOpacity = currentHeight > 0 ? Number.parseFloat(computed.opacity) || 1 : 0;
+    const currentPaddingBottom = currentHeight > 0 ? Number.parseFloat(computed.paddingBottom) || 0 : 0;
     animation?.cancel();
 
     if (targetOpen) {
       details.open = true;
       details.classList.remove("is-closing");
-      const targetHeight = content.scrollHeight;
+
+      content.style.height = "auto";
+      content.style.paddingBottom = "";
+      const targetHeight = content.getBoundingClientRect().height;
+      const targetPaddingBottom = Number.parseFloat(getComputedStyle(content).paddingBottom) || 0;
+
       content.style.height = currentHeight + "px";
       content.style.opacity = String(currentOpacity);
       content.style.overflow = "hidden";
-      animation = content.animate([{ height: currentHeight + "px", opacity: currentOpacity }, { height: targetHeight + "px", opacity: 1 }], { duration, easing, fill: "both" });
+      content.style.paddingBottom = currentPaddingBottom + "px";
+
+      animation = content.animate(
+        [
+          { height: currentHeight + "px", opacity: currentOpacity, paddingBottom: currentPaddingBottom + "px" },
+          { height: targetHeight + "px", opacity: 1, paddingBottom: targetPaddingBottom + "px" },
+        ],
+        { duration, easing, fill: "both" },
+      );
       animation.onfinish = () => { reset(); animation = null; };
       return;
     }
@@ -49,7 +65,15 @@ const disclosureScript = String.raw`(() => {
     content.style.height = currentHeight + "px";
     content.style.opacity = String(currentOpacity);
     content.style.overflow = "hidden";
-    animation = content.animate([{ height: currentHeight + "px", opacity: currentOpacity }, { height: "0px", opacity: 0 }], { duration, easing, fill: "both" });
+    content.style.paddingBottom = currentPaddingBottom + "px";
+
+    animation = content.animate(
+      [
+        { height: currentHeight + "px", opacity: currentOpacity, paddingBottom: currentPaddingBottom + "px" },
+        { height: "0px", opacity: 0, paddingBottom: "0px" },
+      ],
+      { duration, easing, fill: "both" },
+    );
     animation.onfinish = () => { details.open = false; reset(); animation = null; };
   });
 })();`;
