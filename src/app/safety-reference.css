@@ -72,7 +72,7 @@
 .safety-copy p:nth-child(1)::before { content: "Стабильность"; }
 .safety-copy p:nth-child(1)::after { background-image: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIzMiIgaGVpZ2h0PSIzMiIgZmlsbD0iI0UxQUU2NCIgdmlld0JveD0iMCAwIDI1NiAyNTYiPjxwYXRoIGQ9Ik0yMDgsNDBINDhBMTYsMTYsMCwwLDAsMzIsNTZ2NTZjMCw1Mi43MiwyNS41Miw4NC42Nyw0Ni45MywxMDIuMTksMjMuMDYsMTguODYsNDYsMjUuMjYsNDcsMjUuNTNhOCw4LDAsMCwwLDQuMiwwYzEtLjI3LDIzLjkxLTYuNjcsNDctMjUuNTNDMTk4LjQ4LDE5Ni42NywyMjQsMTY0LjcyLDIyNCwxMTJWNTZBMTYsMTYsMCwwLDAsMjA4LDQwWm0wLDcyYzAsMzcuMDctMTMuNjYsNjcuMTYtNDAuNiw4OS40MkExMjkuMywxMjkuMywwLDAsMSwxMjgsMjIzLjYyYTEyOC4yNSwxMjguMjUsMCwwLDEtMzguOTItMjEuODFDNjEuODIsMTc5LjUxLDQ4LDE0OS4zLDQ4LDExMmwwLTU2LDE2MCwwWk04Mi4zNCwxNDEuNjZhOCw4LDAsMCwxLDExLjMyLTExLjMyTDExMiwxNDguNjlsNTAuMzQtNTAuMzVhOCw4LDAsMCwxLDExLjMyLDExLjMybC01Niw1NmE4LDgsMCwwLDEtMTEuMzIsMFoiPjwvcGF0aD48L3N2Zz4="); }
 .safety-copy p:nth-child(2)::before { content: "Безопасность"; }
-.safety-copy p:nth-child(2)::after { background-image: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIzMiIgaGVpZ2h0PSIzMiIgZmlsbD0iI0UxQUU2NCIgdmlld0JveD0iMCAwIDI1NiAyNTYiPjxwYXRoIGQ9Ik0yMjMuNDUsNDAuMDdhOCw4LDAsMCwwLTcuNTItNy41MkMxMzkuOCwyOC4wOCw3OC44Miw1MSw1Mi44Miw5NGE4Ny4wOSw4Ny4wOSwwLDAsMC0xMi43Niw0OWMuNTcsMTUuOTIsNS4yMSwzMiwxMy43OSw0Ny44NWwtMTkuNTEsMTkuNWE4LDgsMCwwLDAsMTEuMzIsMTEuMzlsMTkuNS0xOS41MUM4MSwyMTAuNzMsOTcuMDksMjE1LjM3LDExMywyMTUuOTRxMS42Ny4wNiwzLjMzLjA2QTg2LjkzLDg2LjkzLDAsMCwwLDE2MiwyMDMuMThDMjA1LDE3Ny4xOCwyMjcuOTMsMTE2LjIxLDIyMy40NSw0MC4wN1pNMTUzLjc1LDE4OS41Yy0yMi43NSwxMy43OC00OS42OCwxNC03Ni43MS43N2w4OC42My04OC42MmE4LDgsMCwwLDAtMTEuMzItMTEuMzJMNjUuNzMsMTc5Yy0xMy4xOS0yNy0xMy01NCwuNzctNzYuNzEsMjIuMDktMzYuNDcsNzQuNi01Ni40NCwxNDEuMzEtNTQuMDZDMjEwLjIsMTE0Ljg5LDE5MC4yMiwxNjcuNDEsMTUzLjc1LDE4OS41WiI+PC9wYXRoPjwvc3ZnPg=="); }
+.safety-copy p:nth-child(2)::after { background-image: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIzMiIgaGVpZ2h0PSIzMiIgZmlsbD0iI0UxQUU2NCIgdmlld0JveD0iMCAwIDI1NiAyNTYiPjxwYXRoIGQ9Ik0yMjMuNDUsNDAuMDdhOCw4LDAsMCwwLTcuNTItNy41MkMxMzkuOCwyOC4wOCw3OC44Miw1MSw1Mi44Miw5NGE4Ny4wOSw4Ny4wOSwwLDAsMC0xMi43Niw0OWMuNTcsMTUuOTIsNS4yMSwzMiwxMy43OSw0Ny44NWwtMTkuNTEsMTkuNWE4LDgsMCwwLDAsMTEuMzIsMTEuMzJsMTkuNS0xOS41MUM4MSwyMTAuNzMsOTcuMDksMjE1LjM3LDExMywyMTUuOTRxMS42Ny4wNiwzLjMzLjA2QTg2LjkzLDg2LjkzLDAsMCwwLDE2MiwyMDMuMThDMjA1LDE3Ny4xOCwyMjcuOTMsMTE2LjIxLDIyMy40NSw0MC4wN1pNMTUzLjc1LDE4OS41Yy0yMi43NSwxMy43OC00OS42OCwxNC03Ni43MS43N2w4OC42My04OC42MmE4LDgsMCwwLDAtMTEuMzItMTEuMzJMNjUuNzMsMTc5Yy0xMy4xOS0yNy0xMy01NCwuNzctNzYuNzEsMjIuMDktMzYuNDcsNzQuNi01Ni40NCwxNDEuMzEtNTQuMDZDMjEwLjIsMTE0Ljg5LDE5MC4yMiwxNjcuNDEsMTUzLjc1LDE4OS41WiI+PC9wYXRoPjwvc3ZnPg=="); }
 .safety-copy p:nth-child(3)::before { content: "Подтверждено"; }
 .safety-copy p:nth-child(3)::after { background-image: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIzMiIgaGVpZ2h0PSIzMiIgZmlsbD0iI0UxQUU2NCIgdmlld0JveD0iMCAwIDI1NiAyNTYiPjxwYXRoIGQ9Ik0yMTYsMjRINDBBMTYsMTYsMCwwLDAsMjQsNDBWMjE2YTE2LDE2LDAsMCwwLDE2LDE2SDIxNmExNiwxNiwwLDAsMCwxNi0xNlY0MEExNiwxNiwwLDAsMC0xNi0xNlpNMjE2LDIxNkg0MFY0MEgyMTZWMjE2WiIvPjxwYXRoIGQ9Ik03Miw4MGg4MGE4LDgsMCwwLDAsMC0xNkg3MmE4LDgsMCwwLDAsMCwxNlptMCw0MGgxMTJhOCw4LDAsMCwwLDAtMTZINzJhOCw4LDAsMCwwLDAsMCwxNlptNTYsMzJhMzIsMzIsMCwxLDAsMzIsMzJBMzIsMzIsMCwwLDAsMTI4LDE1MlptMCw0OGExNiwxNiwwLDEsMSwxNi0xNkExNiwxNiwwLDAsMSwxMjgsMjAwWiIvPjwvc3ZnPg=="); }
 
@@ -92,6 +92,7 @@
   box-shadow: inset 0 0 55px rgba(201,158,88,.05);
 }
 
+/* Timeline: line first, labels below it, description below the labels. */
 .safety-number::before {
   position: absolute;
   right: 38px;
@@ -105,7 +106,9 @@
   content: "";
 }
 
-.safety-number::after { content: none; }
+.safety-number::after {
+  content: none;
+}
 
 .safety-number strong {
   margin-top: 8px;
@@ -156,19 +159,54 @@
 }
 
 @media (max-width: 1023px) {
-  .safety .split-grid { grid-template-columns: 1fr; }
-  .safety-number { min-height: 500px; }
+  .safety .split-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .safety-number {
+    min-height: 500px;
+  }
 }
 
 @media (max-width: 640px) {
-  .safety h2 { font-size: clamp(2.7rem, 14vw, 4.6rem); }
-  .safety-copy p { min-height: 0; padding: 24px 0 24px 66px; }
-  .safety-copy p::after { width: 48px; height: 48px; background-size: 26px 26px; }
-  .safety-number { min-height: 520px; padding: 42px 24px 32px; }
-  .safety-number::before { right: 24px; bottom: 185px; left: 24px; }
-  .safety-number p { right: 24px; bottom: 26px; left: 24px; font-size: .82rem; }
+  .safety h2 {
+    font-size: clamp(2.7rem, 14vw, 4.6rem);
+  }
+
+  .safety-copy p {
+    min-height: 0;
+    padding: 24px 0 24px 66px;
+  }
+
+  .safety-copy p::after {
+    width: 48px;
+    height: 48px;
+    background-size: 26px 26px;
+  }
+
+  .safety-number {
+    min-height: 520px;
+    padding: 42px 24px 32px;
+  }
+
+  .safety-number::before {
+    right: 24px;
+    bottom: 185px;
+    left: 24px;
+  }
+
+  .safety-number p {
+    right: 24px;
+    bottom: 26px;
+    left: 24px;
+    font-size: .82rem;
+  }
+
   .safety-number p::before,
-  .safety-number p::after { bottom: calc(100% + 14px); font-size: .68rem; }
+  .safety-number p::after {
+    bottom: calc(100% + 14px);
+    font-size: .68rem;
+  }
 }
 
 /* Mobile timeline alignment override. */
