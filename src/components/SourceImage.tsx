@@ -8,9 +8,7 @@ type SourceImageProps = {
 };
 
 export function SourceImage({ src, alt, className = "", priority = false }: SourceImageProps) {
-  const usesWebpVariant = src.startsWith("/products/") || src.startsWith("/source/");
-  const optimizedSrc = usesWebpVariant ? src.replace(/\.png$/i, ".webp") : src;
-  const staticSrc = optimizedSrc.replace(/^\//, "./");
+  const staticSrc = src.replace(/^\//, "./");
 
   return (
     <div className={`source-image ${className}`}>
