@@ -20,11 +20,18 @@ const disclosureScript = String.raw`(() => {
     content.style.paddingBottom = "";
   };
 
+  const releaseAnimation = () => {
+    const finishedAnimation = animation;
+    animation = null;
+    finishedAnimation?.cancel();
+  };
+
   summary.addEventListener("click", (event) => {
     event.preventDefault();
     targetOpen = !targetOpen;
 
     if (matchMedia("(prefers-reduced-motion: reduce)").matches) {
+      releaseAnimation();
       details.open = targetOpen;
       reset();
       return;
@@ -34,20 +41,21 @@ const disclosureScript = String.raw`(() => {
     const currentHeight = details.open ? content.getBoundingClientRect().height : 0;
     const currentOpacity = currentHeight > 0 ? Number.parseFloat(computed.opacity) || 1 : 0;
     const currentPaddingBottom = currentHeight > 0 ? Number.parseFloat(computed.paddingBottom) || 0 : 0;
-    animation?.cancel();
+    releaseAnimation();
 
     if (targetOpen) {
       details.open = true;
       details.classList.remove("is-closing");
 
       content.style.height = "auto";
+      content.style.opacity = "1";
+      content.style.overflow = "hidden";
       content.style.paddingBottom = "";
       const targetHeight = content.getBoundingClientRect().height;
       const targetPaddingBottom = Number.parseFloat(getComputedStyle(content).paddingBottom) || 0;
 
       content.style.height = currentHeight + "px";
       content.style.opacity = String(currentOpacity);
-      content.style.overflow = "hidden";
       content.style.paddingBottom = currentPaddingBottom + "px";
 
       animation = content.animate(
@@ -57,7 +65,10 @@ const disclosureScript = String.raw`(() => {
         ],
         { duration, easing, fill: "both" },
       );
-      animation.onfinish = () => { reset(); animation = null; };
+      animation.onfinish = () => {
+        reset();
+        releaseAnimation();
+      };
       return;
     }
 
@@ -74,7 +85,11 @@ const disclosureScript = String.raw`(() => {
       ],
       { duration, easing, fill: "both" },
     );
-    animation.onfinish = () => { details.open = false; reset(); animation = null; };
+    animation.onfinish = () => {
+      details.open = false;
+      reset();
+      releaseAnimation();
+    };
   });
 })();`;
 
