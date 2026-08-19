@@ -33,18 +33,18 @@ export const contacts: readonly ContactPerson[] = [
   {
     role: "Генеральный директор",
     name: "Артур Аслаев",
-    phone: "+7 (999) 999-99-99",
-    phoneHref: "tel:+79999999999",
-    email: "example@gmail.com",
-    emailHref: "mailto:example@gmail.com",
+    phone: "+7 (926) 540-20-96",
+    phoneHref: "tel:+79265402096",
+    email: "info@abramovgourmet.ru",
+    emailHref: "mailto:info@abramovgourmet.ru",
   },
   {
     role: "Исполнитель",
     name: "Ирина Фалева",
-    phone: "+7 (999) 999-99-99",
-    phoneHref: "tel:+79999999999",
-    email: "example@gmail.com",
-    emailHref: "mailto:example@gmail.com",
+    phone: "+7 (999) 514-62-98",
+    phoneHref: "tel:+79995146298",
+    email: "I.faleva@abramovgourmet.ru",
+    emailHref: "mailto:I.faleva@abramovgourmet.ru",
   },
 ] as const;
 
