@@ -2,7 +2,7 @@ import test from "node:test";
 import assert from "node:assert/strict";
 import { readFileSync } from "node:fs";
 
-import { contact, directions } from "../src/content/site-content";
+import { contact, contacts, directions } from "../src/content/site-content";
 
 test("publishes only the approved five product directions and prices", () => {
   assert.deepEqual(
@@ -18,8 +18,27 @@ test("publishes only the approved five product directions and prices", () => {
 });
 
 test("uses the approved direct contact destinations", () => {
-  assert.equal(contact.phoneHref, "tel:+79804093293");
-  assert.equal(contact.emailHref, "mailto:aa@aa1.ru");
+  assert.deepEqual(
+    contacts.map(({ name, phone, phoneHref, email, emailHref }) => ({ name, phone, phoneHref, email, emailHref })),
+    [
+      {
+        name: "Артур Аслаев",
+        phone: "+7 (926) 540-20-96",
+        phoneHref: "tel:+79265402096",
+        email: "info@abramovgourmet.ru",
+        emailHref: "mailto:info@abramovgourmet.ru",
+      },
+      {
+        name: "Ирина Фалева",
+        phone: "+7 (999) 514-62-98",
+        phoneHref: "tel:+79995146298",
+        email: "I.faleva@abramovgourmet.ru",
+        emailHref: "mailto:I.faleva@abramovgourmet.ru",
+      },
+    ],
+  );
+  assert.equal(contact.phoneHref, "tel:+79265402096");
+  assert.equal(contact.emailHref, "mailto:info@abramovgourmet.ru");
 });
 
 test("formats menu time ranges with spaces around the dash", () => {
