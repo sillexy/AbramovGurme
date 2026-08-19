@@ -1,0 +1,71 @@
+name: Build hosting package
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - ".github/workflows/build-hosting-package.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  package:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v6
+
+      - name: Set up pnpm
+        uses: pnpm/action-setup@v4
+        with:
+          version: 11
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v6
+        with:
+          node-version: 22
+          cache: pnpm
+
+      - name: Install dependencies
+        run: pnpm install --frozen-lockfile
+
+      - name: Build static site
+        run: pnpm build
+
+      - name: Create clean hosting ZIP
+        run: |
+          cd out
+          zip -qr ../AbramovGurme-hosting.zip .
+          cd ..
+          sha256sum AbramovGurme-hosting.zip > hosting-sha256.txt
+
+      - name: Upload hosting package
+        uses: actions/upload-artifact@v4
+        with:
+          name: AbramovGurme-hosting
+          path: |
+            AbramovGurme-hosting.zip
+            hosting-sha256.txt
+          if-no-files-found: error
+          retention-days: 7
+
+      - name: Publish run metadata
+        env:
+          RUN_ID: ${{ github.run_id }}
+          COMMIT_SHA: ${{ github.sha }}
+        run: |
+          mkdir meta
+          printf '%s\n' "$RUN_ID" > meta/run-id.txt
+          printf '%s\n' "$COMMIT_SHA" > meta/source-commit.txt
+          cp hosting-sha256.txt meta/hosting-sha256.txt
+          cd meta
+          git init
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git checkout -b hosting-package-meta
+          git add .
+          git commit -m "Hosting package metadata for $COMMIT_SHA"
+          git remote add origin "https://x-access-token:${{ github.token }}@github.com/${{ github.repository }}.git"
+          git push --force origin hosting-package-meta
