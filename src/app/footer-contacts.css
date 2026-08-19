@@ -7,8 +7,7 @@
 }
 
 .site-footer .copyright {
-  margin-top: 10px;
-  padding-top: 12px;
+  display: none;
 }
 
 .site-footer .footer-contact {
@@ -110,6 +109,28 @@
   color: #e4bb80;
 }
 
+.footer-meta {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  gap: 24px;
+  margin-top: 10px;
+  padding-top: 12px;
+  border-top: 1px solid rgba(216, 204, 187, .25);
+  color: #938b81;
+  font-size: .78rem;
+  line-height: 1.4;
+}
+
+.footer-meta__copyright {
+  text-align: left;
+}
+
+.footer-meta__studio {
+  margin-left: auto;
+  text-align: right;
+}
+
 @media (max-width: 900px) {
   .site-footer .footer-contact__layout {
     flex-direction: column;
@@ -132,5 +153,22 @@
   .site-footer .footer-contact__people {
     grid-template-columns: 1fr;
     row-gap: 22px;
+  }
+
+  .footer-meta {
+    gap: 12px;
+    font-size: .7rem;
+  }
+}
+
+@media (max-width: 420px) {
+  .footer-meta {
+    flex-wrap: wrap;
+  }
+
+  .footer-meta__studio {
+    width: 100%;
+    margin-left: 0;
+    text-align: left;
   }
 }
