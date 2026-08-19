@@ -2,7 +2,6 @@ import assert from "node:assert/strict";
 import { readFileSync } from "node:fs";
 import test from "node:test";
 
-const page = readFileSync("src/app/page.tsx", "utf8");
 const enhancer = readFileSync("src/components/FooterContactsEnhancer.tsx", "utf8");
 const css = readFileSync("src/app/footer-contacts.css", "utf8");
 
@@ -14,8 +13,8 @@ test("renders copyright left and studio credit right", () => {
   assert.match(css, /\.footer-meta\s*\{[^}]*display:\s*flex;[^}]*justify-content:\s*space-between;/s);
 });
 
-test("does not render the legacy centered copyright", () => {
-  assert.doesNotMatch(page, /className="copyright"/);
+test("hides the legacy centered copyright", () => {
+  assert.match(css, /\.site-footer \.copyright\s*\{[^}]*display:\s*none;/s);
 });
 
 test("keeps footer meta on one row on narrow phones", () => {
