@@ -42,35 +42,51 @@ function LocationIcon() {
 
 export function FooterContactsEnhancer() {
   const [target, setTarget] = useState<HTMLElement | null>(null);
+  const [metaTarget, setMetaTarget] = useState<HTMLElement | null>(null);
 
   useEffect(() => {
     setTarget(document.querySelector<HTMLElement>(".site-footer .footer-contact"));
+    setMetaTarget(document.querySelector<HTMLElement>(".site-footer .site-footer__grid"));
   }, []);
 
   if (!target) return null;
 
-  return createPortal(
-    <div className="footer-contact__layout">
-      <div className="footer-contact__people">
-        {contacts.map((person) => (
-          <section className="footer-contact__person" key={person.name}>
-            <span className="footer-contact__role">{person.role}</span>
-            <p className="footer-contact__row footer-contact__name"><PersonIcon />{person.name}</p>
-            <a className="footer-contact__row" href={person.phoneHref}><PhoneIcon />{person.phone}</a>
-            <a className="footer-contact__row" href={person.emailHref}><MailIcon />{person.email}</a>
-          </section>
-        ))}
-      </div>
+  return (
+    <>
+      {createPortal(
+        <div className="footer-contact__layout">
+          <div className="footer-contact__people">
+            {contacts.map((person) => (
+              <section className="footer-contact__person" key={person.name}>
+                <span className="footer-contact__role">{person.role}</span>
+                <p className="footer-contact__row footer-contact__name"><PersonIcon />{person.name}</p>
+                <a className="footer-contact__row" href={person.phoneHref}><PhoneIcon />{person.phone}</a>
+                <a className="footer-contact__row" href={person.emailHref}><MailIcon />{person.email}</a>
+              </section>
+            ))}
+          </div>
 
-      <section className="footer-contact__regional" aria-label="Представители Иркутской области и ДВФО">
-        <span className="footer-contact__regional-title">Представители Иркутской области и ДВФО</span>
-        <p className="footer-contact__regional-row"><LocationIcon /><span>664075 г. Иркутск, ул. Байкальская, д. 244/5</span></p>
-        <a className="footer-contact__regional-row" href="tel:+73952999212"><PhoneIcon /><span>+7 (395) 299-92-12</span></a>
-        <a className="footer-contact__regional-row" href="tel:+79149296272"><PhoneIcon /><span>+7 (914) 929-62-72</span></a>
-        <a className="footer-contact__regional-row" href="tel:+79643565254"><PhoneIcon /><span>+7 (964) 356-52-54</span></a>
-        <a className="footer-contact__regional-row" href="mailto:office@pkberkut.ru"><MailIcon /><span>office@pkberkut.ru</span></a>
-      </section>
-    </div>,
-    target,
+          <section className="footer-contact__regional" aria-label="Представители Иркутской области и ДВФО">
+            <span className="footer-contact__regional-title">Представители Иркутской области и ДВФО</span>
+            <p className="footer-contact__regional-row"><LocationIcon /><span>664075 г. Иркутск, ул. Байкальская, д. 244/5</span></p>
+            <a className="footer-contact__regional-row" href="tel:+73952999212"><PhoneIcon /><span>+7 (395) 299-92-12</span></a>
+            <a className="footer-contact__regional-row" href="tel:+79149296272"><PhoneIcon /><span>+7 (914) 929-62-72</span></a>
+            <a className="footer-contact__regional-row" href="tel:+79643565254"><PhoneIcon /><span>+7 (964) 356-52-54</span></a>
+            <a className="footer-contact__regional-row" href="mailto:office@pkberkut.ru"><MailIcon /><span>office@pkberkut.ru</span></a>
+          </section>
+        </div>,
+        target,
+      )}
+
+      {metaTarget
+        ? createPortal(
+            <div className="footer-meta">
+              <span className="footer-meta__copyright">© 2026 Абрамов Гурме</span>
+              <span className="footer-meta__studio">Разработано студией SSJCorp</span>
+            </div>,
+            metaTarget,
+          )
+        : null}
+    </>
   );
 }
