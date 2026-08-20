@@ -5,29 +5,25 @@ import { useEffect, useRef } from "react";
 import { contacts, regionalContacts } from "@/content/site-content";
 
 type ContactDialogProps = { className?: string };
-const CONTACT_DIALOG_EXIT_MS = 220;
 
 export function ContactDialog({ className = "" }: ContactDialogProps) {
   const dialogRef = useRef<HTMLDialogElement>(null);
-  const triggerRef = useRef<HTMLButtonElement>(null);
-  const closeTimerRef = useRef<number | null>(null);
-
-  useEffect(() => () => {
-    if (closeTimerRef.current !== null) window.clearTimeout(closeTimerRef.current);
-  }, []);
 
   const close = () => {
-    const dialog = dialogRef.current;
-    if (!dialog?.open) return;
-    dialog.close();
+    dialogRef.current?.close();
   };
 
   return (
     <>
-      <button ref={triggerRef} className={className} type="button" onClick={() => dialogRef.current?.showModal()}>
+      <button className={className} type="button" onClick={() => dialogRef.current?.showModal()}>
         Связаться
       </button>
-      <dialog ref={dialogRef} aria-labelledby="contact-dialog-title" className="contact-dialog" onClick={(e) => e.target === dialogRef.current && close()}>
+      <dialog
+        ref={dialogRef}
+        aria-labelledby="contact-dialog-title"
+        className="contact-dialog"
+        onClick={(e) => e.target === dialogRef.current && close()}
+      >
         <div className="contact-dialog__panel">
           <button className="contact-dialog__close" type="button" aria-label="Закрыть" onClick={close}>×</button>
           <p id="contact-dialog-title" className="contact-dialog__title">Контакты</p>
@@ -40,13 +36,15 @@ export function ContactDialog({ className = "" }: ContactDialogProps) {
                 <a href={person.emailHref}>{person.email}</a>
               </section>
             ))}
+            <section className="contact-dialog__person contact-dialog__regional">
+              <span className="contact-dialog__role">{regionalContacts.title}</span>
+              <strong className="contact-dialog__name">{regionalContacts.address}</strong>
+              {regionalContacts.phones.map((phone, i) => (
+                <a key={phone} href={regionalContacts.phoneHrefs[i]}>{phone}</a>
+              ))}
+              <a href={regionalContacts.emailHref}>{regionalContacts.email}</a>
+            </section>
           </div>
-          <section className="contact-dialog__person">
-            <span className="contact-dialog__role">{regionalContacts.title}</span>
-            <strong className="contact-dialog__name">{regionalContacts.address}</strong>
-            {regionalContacts.phones.map((phone, i) => <a key={phone} href={regionalContacts.phoneHrefs[i]}>{phone}</a>)}
-            <a href={regionalContacts.emailHref}>{regionalContacts.email}</a>
-          </section>
         </div>
       </dialog>
     </>
