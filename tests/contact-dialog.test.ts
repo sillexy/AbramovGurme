@@ -29,3 +29,12 @@ test("animates the contact dialog before it closes", () => {
   assert.match(styles, /@keyframes contact-dialog-panel-in/);
   assert.match(styles, /@keyframes contact-dialog-panel-out/);
 });
+
+test("keeps regional contacts within the dialog at every viewport width", () => {
+  const styles = readFileSync("src/app/contact-dialog-contacts.css", "utf8");
+
+  assert.match(styles, /\.contact-dialog__regional\s*\{[^}]*min-width:\s*0/);
+  assert.match(styles, /\.contact-dialog__regional \.contact-dialog__name\s*\{[^}]*font-size:\s*clamp\(/);
+  assert.match(styles, /\.contact-dialog__regional \.contact-dialog__name\s*\{[^}]*white-space:\s*normal/);
+  assert.match(styles, /\.contact-dialog__regional \.contact-dialog__name\s*\{[^}]*overflow-wrap:\s*anywhere/);
+});
