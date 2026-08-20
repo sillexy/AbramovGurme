@@ -6,38 +6,16 @@ import { createPortal } from "react-dom";
 import { contacts } from "@/content/site-content";
 
 function PersonIcon() {
-  return (
-    <svg aria-hidden="true" viewBox="0 0 24 24">
-      <circle cx="12" cy="7" r="4" />
-      <path d="M4.5 21a7.5 7.5 0 0 1 15 0" />
-    </svg>
-  );
+  return <svg aria-hidden="true" viewBox="0 0 24 24"><circle cx="12" cy="7" r="4" /><path d="M4.5 21a7.5 7.5 0 0 1 15 0" /></svg>;
 }
-
 function PhoneIcon() {
-  return (
-    <svg aria-hidden="true" viewBox="0 0 24 24">
-      <path d="M5 4h3l2 5-2 1.5a14 14 0 0 0 5.5 5.5L15 14l5 2v3c0 1.1-.9 2-2 2C10.3 21 3 13.7 3 6c0-1.1.9-2 2-2Z" />
-    </svg>
-  );
+  return <svg aria-hidden="true" viewBox="0 0 24 24"><path d="M5 4h3l2 5-2 1.5a14 14 0 0 0 5.5 5.5L15 14l5 2v3c0 1.1-.9 2-2 2C10.3 21 3 13.7 3 6c0-1.1.9-2 2-2Z" /></svg>;
 }
-
 function MailIcon() {
-  return (
-    <svg aria-hidden="true" viewBox="0 0 24 24">
-      <rect x="3" y="5" width="18" height="14" rx="2" />
-      <path d="m4 7 8 6 8-6" />
-    </svg>
-  );
+  return <svg aria-hidden="true" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2" /><path d="m4 7 8 6 8-6" /></svg>;
 }
-
 function LocationIcon() {
-  return (
-    <svg aria-hidden="true" viewBox="0 0 24 24">
-      <path d="M12 21s7-6.1 7-12a7 7 0 1 0-14 0c0 5.9 7 12 7 12Z" />
-      <circle cx="12" cy="9" r="2.2" />
-    </svg>
-  );
+  return <svg aria-hidden="true" viewBox="0 0 24 24"><path d="M12 21s7-6.1 7-12a7 7 0 1 0-14 0c0 5.9 7 12 7 12Z" /><circle cx="12" cy="9" r="2.2" /></svg>;
 }
 
 export function FooterContactsEnhancer() {
@@ -54,7 +32,7 @@ export function FooterContactsEnhancer() {
   return (
     <>
       {createPortal(
-        <div className="footer-contact__layout">
+        <div id="contacts" className="footer-contact__layout">
           <div className="footer-contact__people">
             {contacts.map((person) => (
               <section className="footer-contact__person" key={person.name}>
@@ -65,7 +43,6 @@ export function FooterContactsEnhancer() {
               </section>
             ))}
           </div>
-
           <section className="footer-contact__regional" aria-label="Представители Иркутской области и ДВФО">
             <span className="footer-contact__regional-title">Представители Иркутской области и ДВФО</span>
             <p className="footer-contact__regional-row"><LocationIcon /><span>664075 г. Иркутск, ул. Байкальская, д. 244/5</span></p>
@@ -77,16 +54,7 @@ export function FooterContactsEnhancer() {
         </div>,
         target,
       )}
-
-      {metaTarget
-        ? createPortal(
-            <div className="footer-meta">
-              <span className="footer-meta__copyright">© 2026 Абрамов Гурме</span>
-              <span className="footer-meta__studio">Разработано студией SSJCorp</span>
-            </div>,
-            metaTarget,
-          )
-        : null}
+      {metaTarget ? createPortal(<div className="footer-meta"><span className="footer-meta__copyright">© 2026 Абрамов Гурме</span><span className="footer-meta__studio">Разработано студией SSJCorp</span></div>, metaTarget) : null}
     </>
   );
 }
