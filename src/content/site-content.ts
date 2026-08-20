@@ -26,7 +26,7 @@ export const navigation: readonly NavigationItem[] = [
   { href: "#offers", label: "Направления" },
   { href: "#technology", label: "Технология" },
   { href: "#business", label: "Для бизнеса" },
-  { href: null, label: "Дилеры" },
+  { href: "#contacts", label: "Дилеры" },
 ] as const;
 
 export const contacts: readonly ContactPerson[] = [
@@ -47,6 +47,23 @@ export const contacts: readonly ContactPerson[] = [
     emailHref: "mailto:I.faleva@abramovgourmet.ru",
   },
 ] as const;
+
+export const regionalContacts = {
+  title: "Представители Иркутской области и ДВФО",
+  address: "664075 г. Иркутск, ул. Байкальская, д. 244/5",
+  phones: [
+    "+7 (395) 299-92-12",
+    "+7 (914) 929-62-72",
+    "+7 (964) 356-52-54",
+  ],
+  phoneHrefs: [
+    "tel:+73952999212",
+    "tel:+79149296272",
+    "tel:+79643565254",
+  ],
+  email: "office@pkberkut.ru",
+  emailHref: "mailto:office@pkberkut.ru",
+} as const;
 
 /* Compatibility object for the existing footer markup. */
 export const contact = {
