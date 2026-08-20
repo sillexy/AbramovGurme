@@ -56,6 +56,18 @@
   border: 0;
 }
 
+.contact-dialog__regional {
+  min-width: 0;
+  grid-column: 1 / -1;
+}
+
+.contact-dialog__regional .contact-dialog__name {
+  font-size: clamp(1.2rem, 3vw, 1.7rem);
+  line-height: 1.16;
+  white-space: normal;
+  overflow-wrap: anywhere;
+}
+
 .contact-dialog__role {
   color: var(--color-copper);
   font-size: 0.75rem;
@@ -171,6 +183,10 @@
 
   .contact-dialog__name {
     font-size: 1.75rem;
+  }
+
+  .contact-dialog__regional .contact-dialog__name {
+    font-size: clamp(1.15rem, 5.5vw, 1.45rem);
   }
 }
 
