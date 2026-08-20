@@ -5,17 +5,50 @@ import { useEffect, useRef } from "react";
 import { contacts, regionalContacts } from "@/content/site-content";
 
 type ContactDialogProps = { className?: string };
+const CONTACT_DIALOG_EXIT_MS = 220;
 
 export function ContactDialog({ className = "" }: ContactDialogProps) {
   const dialogRef = useRef<HTMLDialogElement>(null);
+  const triggerRef = useRef<HTMLButtonElement>(null);
+  const closeTimerRef = useRef<number | null>(null);
+
+  useEffect(() => () => {
+    if (closeTimerRef.current !== null) window.clearTimeout(closeTimerRef.current);
+  }, []);
+
+  const open = () => {
+    const dialog = dialogRef.current;
+    if (!dialog) return;
+
+    if (closeTimerRef.current !== null) {
+      window.clearTimeout(closeTimerRef.current);
+      closeTimerRef.current = null;
+    }
+
+    dialog.classList.remove("contact-dialog--closing");
+    dialog.showModal();
+  };
 
   const close = () => {
-    dialogRef.current?.close();
+    const dialog = dialogRef.current;
+    if (!dialog?.open || dialog.classList.contains("contact-dialog--closing")) return;
+
+    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+      dialog.close();
+      return;
+    }
+
+    dialog.classList.add("contact-dialog--closing");
+    closeTimerRef.current = window.setTimeout(() => {
+      dialog.classList.remove("contact-dialog--closing");
+      dialog.close();
+      closeTimerRef.current = null;
+    }, CONTACT_DIALOG_EXIT_MS);
   };
 
   return (
     <>
-      <button className={className} type="button" onClick={() => dialogRef.current?.showModal()}>
+      <button ref={triggerRef} className={className} type="button" onClick={open}>
         Связаться
       </button>
       <dialog
@@ -23,6 +56,17 @@ export function ContactDialog({ className = "" }: ContactDialogProps) {
         aria-labelledby="contact-dialog-title"
         className="contact-dialog"
         onClick={(e) => e.target === dialogRef.current && close()}
+        onCancel={(event) => {
+          event.preventDefault();
+          close();
+        }}
+        onKeyDown={(event) => {
+          if (event.key === "Escape") close();
+        }}
+        onClose={() => {
+          dialogRef.current?.classList.remove("contact-dialog--closing");
+          triggerRef.current?.focus();
+        }}
       >
         <div className="contact-dialog__panel">
           <button className="contact-dialog__close" type="button" aria-label="Закрыть" onClick={close}>×</button>
