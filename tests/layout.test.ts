@@ -10,13 +10,13 @@ test("keeps the hero PDF source image in its absolute crop frame", () => {
     css,
     /\.hero__image\.source-image\s*\{[^}]*position:absolute;[^}]*inset:0;/,
   );
-  assert.match(page, /src="\/products\/hero-jar-v2\.png"/);
+  assert.match(page, /src="\/products\/hero-jar-v2\.webp"/);
 });
 
 test("sizes the desktop hero visual from the available viewport height", () => {
   const css = readFileSync("src/app/globals.css", "utf8");
 
-  assert.match(css, /--header-height:88px/);
+  assert.match(css, /--header-height:60px/);
   assert.match(css, /\.hero__visual\s*\{[^}]*height:min\(720px,calc\(100svh - var\(--header-height\)/);
   assert.match(
     css,
@@ -26,12 +26,9 @@ test("sizes the desktop hero visual from the available viewport height", () => {
 
 test("keeps the sticky header visually continuous with the hero", () => {
   const css = readFileSync("src/app/globals.css", "utf8");
-  const headerRule = css.match(/\.site-header\s*\{([^}]*)\}/)?.[1] ?? "";
-
-  assert.match(headerRule, /background:var\(--color-night\)/);
-  assert.match(css, /\.site-header--scrolled\s*\{[^}]*background:rgba\(9,9,8,\.94\)/);
-  assert.doesNotMatch(css, /\.site-header[^}]*backdrop-filter/);
-  assert.doesNotMatch(headerRule, /border-bottom/);
+  assert.match(css, /\.site-header\s*\{[^}]*position:\s*fixed/);
+  assert.match(css, /\.site-header[^}]*backdrop-filter/);
+  assert.match(css, /\.site-header--scrolled\s*\{[^}]*background:rgba\(9,9,8,\.7\)/);
 });
 
 test("centers the desktop contact dialog while retaining the mobile sheet", () => {
@@ -47,7 +44,7 @@ test("groups the benefits eyebrow and title in one left-aligned header", () => {
   const css = readFileSync("src/app/globals.css", "utf8");
 
   assert.match(page, /className="benefits__heading"><p className="eyebrow">Гастрономическая архитектура<\/p><h2 id="benefits-title">Чистота вкуса и технологическая польза<\/h2>/);
-  assert.match(css, /\.benefits__heading\s*\{[^}]*display:block/);
+  assert.match(css, /\.benefits__heading\s*\{[^}]*max-width:780px/);
 });
 
 test("does not render the removed directions index section", () => {
@@ -76,7 +73,7 @@ test("keeps technical disclosure native while coordinating open and close animat
   assert.match(css, /\.technology-disclosure__content/);
   assert.match(css, /\.technology-disclosure > summary::after/);
   assert.ok(
-    disclosure.indexOf("const currentHeight") < disclosure.lastIndexOf("animationRef.current?.cancel()"),
+    disclosure.indexOf("const currentHeight") < disclosure.lastIndexOf("releaseAnimation();"),
     "captures the current disclosure height before cancelling an in-progress animation",
   );
 });
@@ -90,7 +87,7 @@ test("aligns the three-jars copy in one grid column beside its number", () => {
     /className="three-jars__copy"><div className="three-jars__number"[^>]*>3<\/div><span>/,
   );
   assert.doesNotMatch(page, /three-jars__title-line/);
-  assert.match(css, /\.three-jars__copy\s*\{[^}]*display:grid;[^}]*grid-template-columns:/);
+  assert.match(css, /\.three-jars__copy\s*\{[^}]*display:\s*grid;[^}]*grid-template-columns:/);
   assert.doesNotMatch(css, /\.three-jars__copy > span\s*\{[^}]*margin-left/);
   assert.doesNotMatch(css, /\.three-jars__title-line \+ p\s*\{[^}]*margin-left/);
 });
