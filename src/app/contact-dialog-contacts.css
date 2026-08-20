@@ -62,10 +62,10 @@
 }
 
 .contact-dialog__regional .contact-dialog__name {
-  font-size: clamp(1.2rem, 3vw, 1.7rem);
+  font-size: clamp(.75rem, 4.5vw, 1.7rem);
   line-height: 1.16;
-  white-space: normal;
-  overflow-wrap: anywhere;
+  letter-spacing: -.025em;
+  white-space: nowrap;
 }
 
 .contact-dialog__role {
@@ -183,10 +183,6 @@
 
   .contact-dialog__name {
     font-size: 1.75rem;
-  }
-
-  .contact-dialog__regional .contact-dialog__name {
-    font-size: clamp(1.15rem, 5.5vw, 1.45rem);
   }
 }
 
